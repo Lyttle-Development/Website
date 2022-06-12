@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-Thin.woff2") format("woff2"),
+    url("Gluten-Thin.woff") format("woff");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-ExtraLight.woff2") format("woff2"),
+    url("Gluten-ExtraLight.woff") format("woff");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-Light.woff2") format("woff2"),
+    url("Gluten-Light.woff") format("woff");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-Regular.woff2") format("woff2"),
+    url("Gluten-Regular.woff") format("woff");
+    font-weight: normal; /* 400 */
+}
+
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-Medium.woff2") format("woff2"),
+    url("Gluten-Medium.woff") format("woff");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-SemiBold.woff2") format("woff2"),
+    url("Gluten-SemiBold.woff") format("woff");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-Bold.woff2") format("woff2"),
+    url("Gluten-Bold.woff") format("woff");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-ExtraBold.woff2") format("woff2"),
+    url("Gluten-ExtraBold.woff") format("woff");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-Black.woff2") format("woff2"),
+    url("Gluten-Black.woff") format("woff");
+    font-weight: 900;
+}

@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Varela';
+    src: url("VarelaRound-Regular.woff2") format("woff2"),
+    url("VarelaRound-Regular.woff") format("woff");
+    font-weight: normal;
+}

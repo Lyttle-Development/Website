@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-Light.woff2") format("woff2"),
+    url("Gluten-Light.woff") format("woff");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-Regular.woff2") format("woff2"),
+    url("Gluten-Regular.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Gluten";
+    src: url("Gluten-Bold.woff2") format("woff2"),
+    url("Gluten-Bold.woff") format("woff");
+    font-weight: bold;
+}
