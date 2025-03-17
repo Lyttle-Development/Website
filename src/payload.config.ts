@@ -64,7 +64,8 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
       ssl: {
         rejectUnauthorized: false,
-      }
+      },
+      max: 5, // maximum number of clients in the pool
     },
   }),
   collections: [Pages, Posts, Media, Categories, Users],
