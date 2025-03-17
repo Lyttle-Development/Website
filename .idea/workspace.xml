@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa655e6-5100-40f4-bcaf-c4bd589fe0bd" name="Changes" comment="Fix ssl issue">
-      <change afterPath="$PROJECT_DIR$/public/favicon.png" afterDir="false" />
+    <list default="true" id="5fa655e6-5100-40f4-bcaf-c4bd589fe0bd" name="Changes" comment="Update importMap.js">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/website-template-OG.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(payload)/admin/importMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(payload)/admin/importMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/Logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/payload.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +43,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2uRVKPR6k145lTFtE45PgX4z0oC" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -59,6 +56,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/stualyttle/WebstormProjects/Website&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -72,6 +70,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -108,7 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742211308862</updated>
-      <workItem from="1742211310349" duration="3526000" />
+      <workItem from="1742211310349" duration="4070000" />
     </task>
     <task id="LOCAL-00001" summary="Update PayloadCMS">
       <option name="closed" value="true" />
@@ -126,7 +127,39 @@
       <option name="project" value="LOCAL" />
       <updated>1742213042358</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix db issue">
+      <option name="closed" value="true" />
+      <created>1742214949368</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742214949368</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Setup .idea">
+      <option name="closed" value="true" />
+      <created>1742214960809</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742214960809</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Import logo">
+      <option name="closed" value="true" />
+      <created>1742214971807</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742214971807</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update importMap.js">
+      <option name="closed" value="true" />
+      <created>1742214982702</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742214982702</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +168,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update PayloadCMS" />
     <MESSAGE value="Fix ssl issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix ssl issue" />
+    <MESSAGE value="Fix db issue" />
+    <MESSAGE value="Setup .idea" />
+    <MESSAGE value="Import logo" />
+    <MESSAGE value="Update importMap.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update importMap.js" />
   </component>
 </project>
