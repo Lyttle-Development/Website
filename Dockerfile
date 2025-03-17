@@ -11,12 +11,8 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY pnpm-lock.yaml* ./
-
-# Explicitly prepare a specific version of pnpm
-RUN corepack prepare pnpm@7.18.2 --activate
-
 # Then install dependencies
-RUN pnpm i --frozen-lockfile;
+RUN npm ci;
 
 # Rebuild the source code only when needed
 FROM base AS builder

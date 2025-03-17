@@ -7,6 +7,8 @@
     <list default="true" id="5fa655e6-5100-40f4-bcaf-c4bd589fe0bd" name="Changes" comment="Update Dockerfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +66,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.dev.executor&quot;: &quot;Run&quot;,
     &quot;npm.docker:build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.ii.executor&quot;: &quot;Run&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/stualyttle/WebstormProjects/Website/node_modules/prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/stualyttle/WebstormProjects/Website/node_modules/typescript/lib&quot;,
@@ -78,7 +81,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.docker:build">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -101,8 +104,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.docker:build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.docker:build" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742211308862</updated>
-      <workItem from="1742211310349" duration="5363000" />
+      <workItem from="1742211310349" duration="5631000" />
     </task>
     <task id="LOCAL-00001" summary="Update PayloadCMS">
       <option name="closed" value="true" />
@@ -203,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742216697366</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update Dockerfile">
+      <option name="closed" value="true" />
+      <created>1742216754484</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742216754484</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
