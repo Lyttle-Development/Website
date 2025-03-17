@@ -12,8 +12,8 @@ WORKDIR /app
 # Install dependencies based on the preferred package manager
 COPY pnpm-lock.yaml* ./
 
-# Explicitly prepare a specific version of pnpm with signatures disabled
-RUN COREPACK_DISABLE_SIGNATURES=1 corepack prepare pnpm@10.3.0 --activate
+# Explicitly prepare a specific version of pnpm
+RUN corepack prepare pnpm@7.18.2 --activate
 
 # Then install dependencies
 RUN pnpm i --frozen-lockfile;
