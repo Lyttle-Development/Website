@@ -7,8 +7,6 @@
     <list default="true" id="5fa655e6-5100-40f4-bcaf-c4bd589fe0bd" name="Changes" comment="Update Dockerfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742211308862</updated>
-      <workItem from="1742211310349" duration="5631000" />
+      <workItem from="1742211310349" duration="5909000" />
     </task>
     <task id="LOCAL-00001" summary="Update PayloadCMS">
       <option name="closed" value="true" />
@@ -214,7 +212,23 @@
       <option name="project" value="LOCAL" />
       <updated>1742216754484</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Update Dockerfile">
+      <option name="closed" value="true" />
+      <created>1742217140346</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742217140346</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update Dockerfile">
+      <option name="closed" value="true" />
+      <created>1742217199351</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1742217199351</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
