@@ -11,7 +11,12 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY pnpm-lock.yaml* ./
-RUN corepack enable pnpm && pnpm i --frozen-lockfile;
+
+# Explicitly prepare a specific version of pnpm
+RUN corepack prepare pnpm@10.3.0 --activate
+
+# Then install dependencies
+RUN pnpm i --frozen-lockfile;
 
 # Rebuild the source code only when needed
 FROM base AS builder
