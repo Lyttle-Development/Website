@@ -10,9 +10,6 @@ COPY . .
 # Install dependencies using npm ci
 RUN npm ci
 
-# Build the application
-RUN npm run docker:setup
-
 # Expose the port the app runs on
 EXPOSE 3000
 
