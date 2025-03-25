@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa655e6-5100-40f4-bcaf-c4bd589fe0bd" name="Changes" comment="Update Dockerfile">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Header/Nav/styles.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Header/styles.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Header/Component.client.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Header/Component.client.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Header/Nav/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Header/Nav/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/payload-types.ts" afterDir="false" />
+    <list default="true" id="5fa655e6-5100-40f4-bcaf-c4bd589fe0bd" name="Changes" comment="Add basic styles">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +127,7 @@
       <workItem from="1742211310349" duration="6896000" />
       <workItem from="1742226249885" duration="1289000" />
       <workItem from="1742231867904" duration="7000" />
-      <workItem from="1742923114652" duration="1893000" />
+      <workItem from="1742923114652" duration="2124000" />
     </task>
     <task id="LOCAL-00001" summary="Update PayloadCMS">
       <option name="closed" value="true" />
@@ -284,13 +273,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742217917004</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Update packages">
+      <option name="closed" value="true" />
+      <created>1742925194783</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1742925194783</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add basic styles">
+      <option name="closed" value="true" />
+      <created>1742925218024</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1742925218024</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Update PayloadCMS" />
     <MESSAGE value="Fix ssl issue" />
     <MESSAGE value="Fix db issue" />
@@ -299,6 +306,9 @@
     <MESSAGE value="Update importMap.js" />
     <MESSAGE value="Setup github workflow" />
     <MESSAGE value="Update Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Dockerfile" />
+    <MESSAGE value="Update packages" />
+    <MESSAGE value="Add basic styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add basic styles" />
+    <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>
