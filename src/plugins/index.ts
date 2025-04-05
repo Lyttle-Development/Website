@@ -13,6 +13,7 @@ import { beforeSyncWithSearch } from '@/search/beforeSync'
 
 import { Page, Post } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
+import { uploadthingStorage } from '@payloadcms/storage-uploadthing'
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title ? `${doc.title} | Payload Website Template` : 'Payload Website Template'
@@ -91,4 +92,13 @@ export const plugins: Plugin[] = [
     },
   }),
   payloadCloudPlugin(),
+  uploadthingStorage({
+    collections: {
+      media: true,
+    },
+    options: {
+      token: process.env.UPLOADTHING_TOKEN,
+      acl: 'public-read',
+    },
+  }),
 ]
