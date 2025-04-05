@@ -1,12 +1,15 @@
 import type { Block } from 'payload'
-import { FlexibleRow } from '@/blocks/FlexibleRow/config'
+import { FlexibleRowConfig } from '@/blocks/FlexibleRow/config'
 import { exposedComponentBlocks } from '@/blocks/exposedComponentBlocks'
 import { FlexibleRowBlock } from '@/blocks/FlexibleRow/Component'
 import { ImportBlocks } from '@/blocks/RenderBlocks'
+import { SpaceBackgroundConfig } from '@/blocks/SpaceBackground/config'
+import { SpaceBackgroundBlock } from '@/blocks/SpaceBackground/Component'
 
 // Import all the blocks that will be exposed to the CMS
 export const importedBlocks: ImportBlocks = {
-  flexibleRow: [FlexibleRow, FlexibleRowBlock],
+  flexibleRow: [FlexibleRowConfig, FlexibleRowBlock],
+  spaceBackground: [SpaceBackgroundConfig, SpaceBackgroundBlock],
 }
 
 ///////////////////////////////////////////////////////////////////////////

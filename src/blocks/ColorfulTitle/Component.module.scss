@@ -1,0 +1,13 @@
+.colorfulTitle {
+  display: inline-flex;
+  flex-direction: column;
+  width: fit-content;
+
+  &.reverseColor {
+    flex-direction: column-reverse;
+  }
+
+  &.reverseAlign {
+    align-items: flex-end;
+  }
+}

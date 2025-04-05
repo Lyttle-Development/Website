@@ -15,6 +15,7 @@ import { draftMode } from 'next/headers'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
+import { SvgSpriteSheet } from '@/svg/SvgSpriteSheet'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -40,6 +41,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <meta name="color-scheme" content="light only" />
       </head>
       <body>
+        <SvgSpriteSheet />
         <Providers>
           <AdminBar
             adminBarProps={{

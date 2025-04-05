@@ -63,7 +63,7 @@ const columnFields: Field[] = [
   }),
 ]
 
-export const Content: Block = {
+export const ContentConfig: Block = {
   slug: 'content',
   interfaceName: 'ContentBlock',
   fields: [
