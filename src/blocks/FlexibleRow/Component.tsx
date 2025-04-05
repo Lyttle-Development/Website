@@ -1,5 +1,6 @@
 import React from 'react'
 import { RenderBlock, RenderBlocks } from '@/blocks/RenderBlocks'
+import styles from './Component.module.scss'
 
 export interface FlexibleRowProps {
   content: RenderBlock[]
@@ -8,7 +9,7 @@ export interface FlexibleRowProps {
 export const FlexibleRowBlock: React.FC<FlexibleRowProps> = (props) => {
   const { content } = props
   return (
-    <div className="flexible-row">
+    <div className={styles.flexibleRow}>
       <RenderBlocks blocks={content} />
     </div>
   )
