@@ -24,7 +24,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
+        <link href="/favicon.png" rel="icon" sizes="2000x2000" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        {/* DarkReader */}
+        <meta name="darkreader-lock" />
+
+        {/* Edge/Chrome Forced Dark Mode */}
+        <meta name="forced-colors" content="none" />
+        <meta name="color-scheme" content="light" />
+
+        {/* Windows High Contrast Mode */}
+        <meta name="ms-high-contrast" content="none" />
+
+        {/* Safari/WebKit Auto Dark Mode */}
+        <meta name="color-scheme" content="light only" />
       </head>
       <body>
         <Providers>

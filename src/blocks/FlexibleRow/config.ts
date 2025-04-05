@@ -3,7 +3,7 @@ import { exposedComponentBlocks } from '@/blocks/exposedComponentBlocks'
 
 export const FlexibleRow: Block = {
   slug: 'flexibleRow',
-  interfaceName: 'ContentBlock',
+  interfaceName: 'FlexibleRowBlock',
   fields: [
     {
       name: 'content',
