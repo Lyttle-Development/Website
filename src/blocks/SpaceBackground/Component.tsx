@@ -4,6 +4,7 @@ import styles from './Component.module.scss'
 import classNames from 'classnames'
 import { RandomStars } from '@/components/RandomStars'
 import { Rocket } from '@/components/Rocket'
+import { RandomCircles } from '@/components/RandomCircles'
 
 export interface SpaceBackgroundProps {
   content: RenderBlock[]
@@ -23,6 +24,7 @@ export const SpaceBackgroundBlock: React.FC<SpaceBackgroundProps> = (props) => {
         />
         {/*  Create random stars mech based on width */}
         <RandomStars />
+        <RandomCircles />
         <Rocket />
       </div>
       <div
