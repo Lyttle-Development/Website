@@ -3,7 +3,7 @@ import { postgresAdapter } from '@payloadcms/db-postgres'
 
 import sharp from 'sharp' // sharp-import
 import path from 'path'
-import { buildConfig, CustomComponent, PayloadRequest } from 'payload'
+import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
 
 import { Categories } from './collections/Categories'
@@ -18,8 +18,6 @@ import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 import { WEBSITE_NAME } from 'constrants'
-import Logo from '@/components/Logo'
-import Favicon from '@/components/Favicon'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -38,8 +36,8 @@ export default buildConfig({
       beforeLogin: [],
       beforeDashboard: [],
       graphics: {
-        Logo: Logo as unknown as CustomComponent,
-        Icon: Favicon as unknown as CustomComponent,
+        Logo: '@/graphics/Logo',
+        Icon: '@/graphics/Favicon',
       },
     },
     importMap: {
