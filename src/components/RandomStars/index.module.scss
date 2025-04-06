@@ -1,0 +1,15 @@
+.stars {
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - 2rem);
+  overflow: hidden;
+  top: 1rem;
+  z-index: -2;
+}
+
+.star {
+  position: absolute;
+  width: 30px; // Adjust the size as needed
+  height: 30px; // Adjust the size as needed
+  pointer-events: none;
+}

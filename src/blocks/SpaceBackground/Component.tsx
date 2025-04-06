@@ -2,7 +2,8 @@ import React from 'react'
 import { RenderBlock, RenderBlocks } from '@/blocks/RenderBlocks'
 import styles from './Component.module.scss'
 import classNames from 'classnames'
-import { Svg, SvgIcon } from '@/svg/Svg'
+import { RandomStars } from '@/components/RandomStars'
+import { Rocket } from '@/components/Rocket'
 
 export interface SpaceBackgroundProps {
   content: RenderBlock[]
@@ -11,11 +12,18 @@ export interface SpaceBackgroundProps {
 
 export const SpaceBackgroundBlock: React.FC<SpaceBackgroundProps> = (props) => {
   const { content, container } = props
+
   return (
     <div className={classNames(styles.spaceBackground)}>
       <div className={styles.background}>
-        <Svg size={100} icon={SvgIcon.HeadingVector} />
-        <img src="/test.svg" alt="EE" className={styles.backgroundBanner} />
+        <img
+          src="/svgs/home/headerBackgroundBanner.svg"
+          alt="EE"
+          className={styles.backgroundBanner}
+        />
+        {/*  Create random stars mech based on width */}
+        <RandomStars />
+        <Rocket />
       </div>
       <div
         className={classNames(styles.content, {
