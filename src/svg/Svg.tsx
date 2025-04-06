@@ -2,6 +2,7 @@ import type { SVGProps } from 'react'
 
 export enum SvgIcon {
   Ellipse = 'ellipse',
+  HeadingVector = 'HeadingVector',
 }
 
 export interface SvgProps extends SVGProps<SVGSVGElement> {

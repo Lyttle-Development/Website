@@ -12,7 +12,6 @@ export interface SpaceBackgroundProps {
 
 export const ColorfulTitleBlock: React.FC<SpaceBackgroundProps> = (props) => {
   const { headingType, title, colorTitle, reverseAlign, reverseColor } = props
-  console.log(headingType)
   return (
     <>
       {React.createElement(

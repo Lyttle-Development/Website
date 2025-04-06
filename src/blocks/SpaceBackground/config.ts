@@ -10,5 +10,12 @@ export const SpaceBackgroundConfig: Block = {
       type: 'blocks',
       blocks: exposedBuildingBlocks,
     },
+    {
+      name: 'container',
+      type: 'checkbox',
+      label: 'Enclose in a container',
+      defaultValue: true,
+      required: true,
+    },
   ],
 }

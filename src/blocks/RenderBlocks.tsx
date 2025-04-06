@@ -55,11 +55,7 @@ export const RenderBlocks: React.FC<RenderBlocksProps> = ({ blocks }) => {
         if (blockType && blockType in exposedBlockComponents) {
           const Block = exposedBlockComponents[blockType]
           if (Block) {
-            return (
-              <div className="my-16" key={index}>
-                <Block {...block} disableInnerContainer />
-              </div>
-            )
+            return <Block {...block} disableInnerContainer key={index} />
           }
         }
         return null
