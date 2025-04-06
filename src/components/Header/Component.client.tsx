@@ -19,7 +19,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
     <header className={classNames('container', styles.header)}>
       <div className={classNames(styles.container)}>
         <Link href="/">
-          <Logo loading="eager" priority="high" className="invert dark:invert-0" />
+          <Logo loading="eager" priority="high" />
         </Link>
         <HeaderNav data={data} />
       </div>
