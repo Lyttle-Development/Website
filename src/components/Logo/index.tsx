@@ -41,3 +41,5 @@ export const Logo = (props: Props) => {
     </svg>
   )
 }
+
+export default Logo

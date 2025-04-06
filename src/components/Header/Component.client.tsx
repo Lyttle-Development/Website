@@ -4,7 +4,7 @@ import React from 'react'
 
 import type { Header } from '@/payload-types'
 
-import { Logo } from '@/components/Logo/Logo'
+import { Logo } from '@/components/Logo'
 import { HeaderNav } from './Nav'
 import classNames from 'classnames'
 

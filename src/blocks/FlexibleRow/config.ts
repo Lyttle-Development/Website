@@ -10,5 +10,12 @@ export const FlexibleRowConfig: Block = {
       type: 'blocks',
       blocks: exposedComponentBlocks,
     },
+    {
+      name: 'container',
+      type: 'checkbox',
+      label: 'Enclose in a container',
+      defaultValue: true,
+      required: true,
+    },
   ],
 }

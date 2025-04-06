@@ -1,5 +1,5 @@
 import type { Block } from 'payload'
-import { exposedComponentBlocks } from '@/blocks/exposedComponentBlocks'
+import { exposedBuildingBlocks } from '@/blocks/exposedBuildingBlocks'
 
 export const SpaceBackgroundConfig: Block = {
   slug: 'spaceBackground',
@@ -8,7 +8,7 @@ export const SpaceBackgroundConfig: Block = {
     {
       name: 'content',
       type: 'blocks',
-      blocks: exposedComponentBlocks,
+      blocks: exposedBuildingBlocks,
     },
   ],
 }

@@ -7,7 +7,6 @@ import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
-import { exposedBlocks } from '../../blocks/exposedBlocks'
 
 import {
   MetaDescriptionField,
@@ -18,6 +17,7 @@ import {
 } from '@payloadcms/plugin-seo/fields'
 import { collectionEnabled } from '@/utilities/collectionEnabled'
 import { MODULE_ENABLED } from '../../../constrants'
+import { exposedBlocks } from '@/blocks/RenderBlocks'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',

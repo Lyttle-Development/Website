@@ -17,9 +17,9 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
-import { WEBSITE_NAME } from '../constrants'
-import { Logo } from '@/graphics/Logo/Logo'
-import { Icon } from '@/graphics/Icon/Icon'
+import { WEBSITE_NAME } from 'constrants'
+import Logo from '@/components/Logo'
+import Favicon from '@/components/Favicon'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -39,7 +39,7 @@ export default buildConfig({
       beforeDashboard: [],
       graphics: {
         Logo: Logo as unknown as CustomComponent,
-        Icon: Icon as unknown as CustomComponent,
+        Icon: Favicon as unknown as CustomComponent,
       },
     },
     importMap: {
