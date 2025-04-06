@@ -11,6 +11,12 @@ export const Rocket: React.FC = () => {
         const scrollY = window.scrollY
         const vh = window.innerHeight
 
+        if (scrollY === 0) {
+          // Reset styles when at the top of the page
+          rocketRef.current.style = ''
+          return
+        }
+
         if (scrollY < vh) {
           // Phase 1: initial animation before 100vh scroll.
           rocketRef.current.style.setProperty('bottom', `${45 + scrollY * 0.2}%`, 'important')
