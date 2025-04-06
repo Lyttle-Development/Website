@@ -13,6 +13,7 @@ import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
 
+import './reset.css'
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 import { SvgSpriteSheet } from '@/svg/SvgSpriteSheet'

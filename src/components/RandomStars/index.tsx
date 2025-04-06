@@ -15,8 +15,8 @@ const TRANSLATE_MAX = 50
 const SCALE_MIN = 0.5
 const SCALE_MAX = 0.8
 
-const RAND_SEED = 'Yb6zD94tLTyWQqM8SunVx5'
-const DISTANCE_BETWEEN = 60
+const RAND_SEED = 'DXdQ2q3TeBcWknF4VY9xCU'
+const DISTANCE_BETWEEN = 85
 
 function randomNegative(rand: RandomSeed.RandomSeed) {
   return rand.intBetween(0, 1) * -1
@@ -40,18 +40,27 @@ export const RandomStars: React.FC = () => {
     <div className={classNames(styles.stars)}>
       {[...new Array(numStars)].map((_, index) => {
         const scale = rand.floatBetween(SCALE_MIN, SCALE_MAX)
+        const translateX = rand.floatBetween(TRANSLATE_MIN, TRANSLATE_MAX) * randomNegative(rand)
+        const translateY = rand.floatBetween(TRANSLATE_MIN, TRANSLATE_MAX) * randomNegative(rand)
+        const animationDuration = `${rand.floatBetween(3, 7)}s`
+        const rotation = rand.floatBetween(0, 360)
         return (
           <img
             src={stars[rand.intBetween(0, stars.length - 1)]}
             className={styles.star}
-            style={{
-              top: `${rand.floatBetween(0, 90)}%`,
-              left: `${rand.floatBetween(0, 100)}%`,
-              opacity: rand.floatBetween(OPACITY_MIN, OPACITY_MAX),
-              transform: `translate(${rand.floatBetween(TRANSLATE_MIN, TRANSLATE_MAX) * randomNegative(rand)}%, 0) scale(${scale})`,
-              width: `${30 * scale}px`,
-              height: `${30 * scale}px`,
-            }}
+            style={
+              {
+                top: `${rand.floatBetween(0, 90)}%`,
+                left: `${rand.floatBetween(0, 100)}%`,
+                opacity: rand.floatBetween(OPACITY_MIN, OPACITY_MAX),
+                transform: `translate(0, 0) scale(1) rotate(${rotation}deg)`,
+                width: `${30 * scale}px`,
+                height: `${30 * scale}px`,
+                '--translate-x': `${translateX}%`,
+                '--translate-y': `${translateY}%`,
+                animationDuration,
+              } as React.CSSProperties
+            }
             key={index}
             aria-hidden
           />
