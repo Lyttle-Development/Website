@@ -5,13 +5,25 @@ import classNames from 'classnames'
 export interface SpaceBackgroundProps {
   headingType: string // e.g., 'h1', 'h2', etc.
   title: string
+  color: string
   colorTitle: string
   reverseAlign: boolean
   reverseColor: boolean
 }
 
+function getGolor(color: string) {
+  switch (color) {
+    case 'blue':
+      return '#6C63FF'
+    case 'orange':
+      return '#FF6363'
+    default:
+      return '#ffffff'
+  }
+}
+
 export const ColorfulTitleBlock: React.FC<SpaceBackgroundProps> = (props) => {
-  const { headingType, title, colorTitle, reverseAlign, reverseColor } = props
+  const { headingType, title, color, colorTitle, reverseAlign, reverseColor } = props
   return (
     <>
       {React.createElement(
@@ -24,7 +36,14 @@ export const ColorfulTitleBlock: React.FC<SpaceBackgroundProps> = (props) => {
         },
         <>
           <span>{title}</span>
-          <span>{colorTitle}</span>
+          <span
+            className={styles.color}
+            style={{
+              color: getGolor(color),
+            }}
+          >
+            {colorTitle}
+          </span>
         </>,
       )}
     </>

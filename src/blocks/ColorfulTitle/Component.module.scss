@@ -2,6 +2,7 @@
   display: inline-flex;
   flex-direction: column;
   width: fit-content;
+  font-size: 2rem;
 
   &.reverseColor {
     flex-direction: column-reverse;
@@ -9,5 +10,10 @@
 
   &.reverseAlign {
     align-items: flex-end;
+  }
+
+  .color {
+    font-family: serif;
+    font-style: italic;
   }
 }
