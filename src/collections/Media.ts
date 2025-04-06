@@ -10,6 +10,8 @@ import { fileURLToPath } from 'url'
 
 import { anyone } from '../access/anyone'
 import { authenticated } from '../access/authenticated'
+import { collectionEnabled } from '@/utilities/collectionEnabled'
+import { MODULE_ENABLED } from '../../constrants'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -17,10 +19,10 @@ const dirname = path.dirname(filename)
 export const Media: CollectionConfig = {
   slug: 'media',
   access: {
-    create: authenticated,
-    delete: authenticated,
-    read: anyone,
-    update: authenticated,
+    create: (args) => collectionEnabled(MODULE_ENABLED.media, authenticated, args),
+    delete: (args) => collectionEnabled(MODULE_ENABLED.media, authenticated, args),
+    read: (args) => collectionEnabled(MODULE_ENABLED.media, anyone, args),
+    update: (args) => collectionEnabled(MODULE_ENABLED.media, authenticated, args),
   },
   fields: [
     {

@@ -26,14 +26,16 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { slugField } from '@/fields/slug'
+import { collectionEnabled } from '@/utilities/collectionEnabled'
+import { MODULE_ENABLED } from '../../../constrants'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
   access: {
-    create: authenticated,
-    delete: authenticated,
-    read: authenticatedOrPublished,
-    update: authenticated,
+    create: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticated, args),
+    delete: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticated, args),
+    read: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticatedOrPublished, args),
+    update: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticated, args),
   },
   // This config controls what's populated by default when a post is referenced
   // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property

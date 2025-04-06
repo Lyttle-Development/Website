@@ -1,15 +1,17 @@
 import type { CollectionConfig } from 'payload'
 
-import { authenticated } from '../../access/authenticated'
+import { authenticated } from '@/access/authenticated'
+import { MODULE_ENABLED } from 'constrants'
+import { collectionEnabled } from '@/utilities/collectionEnabled'
 
 export const Users: CollectionConfig = {
   slug: 'users',
   access: {
     admin: authenticated,
-    create: authenticated,
-    delete: authenticated,
-    read: authenticated,
-    update: authenticated,
+    create: (args) => collectionEnabled(MODULE_ENABLED.users, authenticated, args),
+    delete: (args) => collectionEnabled(MODULE_ENABLED.users, authenticated, args),
+    read: (args) => collectionEnabled(MODULE_ENABLED.users, authenticated, args),
+    update: (args) => collectionEnabled(MODULE_ENABLED.users, authenticated, args),
   },
   admin: {
     defaultColumns: ['name', 'email'],

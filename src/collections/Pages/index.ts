@@ -16,14 +16,16 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+import { collectionEnabled } from '@/utilities/collectionEnabled'
+import { MODULE_ENABLED } from '../../../constrants'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
   access: {
-    create: authenticated,
-    delete: authenticated,
-    read: authenticatedOrPublished,
-    update: authenticated,
+    create: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticated, args),
+    delete: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticated, args),
+    read: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticatedOrPublished, args),
+    update: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticated, args),
   },
   // This config controls what's populated by default when a page is referenced
   // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property
