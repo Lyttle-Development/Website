@@ -3,7 +3,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 
 function lerp(a: number, b: number, t: number) {
-  return a + (b - a) * t
+  const result = a + (b - a) * t
+  console.log(`${a} + (${b} - ${a}) * ${t} = ${result}`)
+  return result
 }
 
 export const Rocket: React.FC = () => {
@@ -44,14 +46,16 @@ export const Rocket: React.FC = () => {
   useEffect(() => {
     setVh(document.documentElement.offsetHeight)
 
-    const totalTicks = animationDurationMs / tickRate
-    const step = rocketStartAfterAnimation / totalTicks
-
+    const startTime = new Date().getTime()
     const interval = setInterval(() => {
-      rocketPosRef.current += step
+      const i = tickRate / animationDurationMs
+      rocketPosRef.current = lerp(rocketPosRef.current, rocketStartAfterAnimation, i)
+
       setRocketPosition(rocketPosRef.current)
 
-      if (rocketPosRef.current >= rocketStartAfterAnimation) {
+      if (rocketPosRef.current + 0.00215 >= rocketStartAfterAnimation) {
+        rocketPosRef.current = rocketStartAfterAnimation
+        console.log(new Date().getTime() - startTime)
         clearInterval(interval)
       }
     }, tickRate)
