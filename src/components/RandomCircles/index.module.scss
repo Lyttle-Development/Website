@@ -1,4 +1,12 @@
-.cicle {
+.circles {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.circle {
   position: absolute;
   border-radius: 50%;
   opacity: 0.5;

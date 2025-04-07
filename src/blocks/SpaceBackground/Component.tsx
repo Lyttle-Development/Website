@@ -14,17 +14,17 @@ export interface SpaceBackgroundProps {
 export const SpaceBackgroundBlock: React.FC<SpaceBackgroundProps> = (props) => {
   const { content, container } = props
 
+  // @ts-ignore
   return (
     <div className={classNames(styles.spaceBackground)}>
       <div className={styles.background}>
         <img
           src="/svgs/home/headerBackgroundBanner.svg"
-          alt="EE"
+          alt="Header Background Banner"
           className={styles.backgroundBanner}
         />
-        {/*  Create random stars mech based on width */}
-        <RandomStars />
-        <RandomCircles />
+        <RandomStars width="100vw" height="calc(100vh - 2rem)" />
+        <RandomCircles width="100vw" height="calc(100vh - 2rem)" />
         <Rocket />
       </div>
       <div

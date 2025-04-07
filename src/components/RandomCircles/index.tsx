@@ -22,7 +22,13 @@ function randomNegative(rand: RandomSeed.RandomSeed) {
   return rand.intBetween(0, 1) * -1
 }
 
-export const RandomCircles: React.FC = () => {
+interface RandomCirclesProps {
+  width?: string
+  height?: string
+}
+
+export const RandomCircles: React.FC<RandomCirclesProps> = (props) => {
+  const { width = '50rem', height = '50rem' } = props
   const [numStars, setNumStars] = useState(0)
 
   useEffect(() => {
@@ -37,7 +43,13 @@ export const RandomCircles: React.FC = () => {
   const rand = RandomSeed.create(RAND_SEED)
 
   return (
-    <div className={classNames(styles.stars)}>
+    <div
+      className={classNames(styles.circles)}
+      style={{
+        width,
+        height,
+      }}
+    >
       {[...new Array(numStars)].map((_, index) => {
         const scale = rand.floatBetween(SCALE_MIN, SCALE_MAX)
         const translateX = rand.floatBetween(TRANSLATE_MIN, TRANSLATE_MAX) * randomNegative(rand)
@@ -46,7 +58,7 @@ export const RandomCircles: React.FC = () => {
         const rotation = rand.floatBetween(0, 360)
         return (
           <div
-            className={styles.cicle}
+            className={styles.circle}
             style={
               {
                 backgroundColor: colors[rand.intBetween(0, colors.length - 1)],

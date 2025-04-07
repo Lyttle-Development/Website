@@ -22,7 +22,13 @@ function randomNegative(rand: RandomSeed.RandomSeed) {
   return rand.intBetween(0, 1) * -1
 }
 
-export const RandomStars: React.FC = () => {
+interface RandomStarsProps {
+  width?: string
+  height?: string
+}
+
+export const RandomStars: React.FC<RandomStarsProps> = (props) => {
+  const { width = '50rem', height = '50rem' } = props
   const [numStars, setNumStars] = useState(0)
 
   useEffect(() => {
@@ -37,7 +43,13 @@ export const RandomStars: React.FC = () => {
   const rand = RandomSeed.create(RAND_SEED)
 
   return (
-    <div className={classNames(styles.stars)}>
+    <div
+      className={classNames(styles.stars)}
+      style={{
+        width,
+        height,
+      }}
+    >
       {[...new Array(numStars)].map((_, index) => {
         const scale = rand.floatBetween(SCALE_MIN, SCALE_MAX)
         const translateX = rand.floatBetween(TRANSLATE_MIN, TRANSLATE_MAX) * randomNegative(rand)
