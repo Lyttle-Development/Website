@@ -7,6 +7,7 @@ export interface SpaceBackgroundProps {
   title: string
   color: string
   colorTitle: string
+  colorPadding: string
   reverseAlign: boolean
   reverseColor: boolean
 }
@@ -23,7 +24,7 @@ function getGolor(color: string) {
 }
 
 export const ColorfulTitleBlock: React.FC<SpaceBackgroundProps> = (props) => {
-  const { headingType, title, color, colorTitle, reverseAlign, reverseColor } = props
+  const { headingType, title, color, colorTitle, colorPadding, reverseAlign, reverseColor } = props
   return (
     <>
       {React.createElement(
@@ -32,6 +33,9 @@ export const ColorfulTitleBlock: React.FC<SpaceBackgroundProps> = (props) => {
           className: classNames(styles.colorfulTitle, {
             [styles.reverseAlign as string]: reverseAlign,
             [styles.reverseColor as string]: reverseColor,
+            [styles.colorPaddingLight as string]: colorPadding === 'light',
+            [styles.colorPaddingMedium as string]: colorPadding === 'medium',
+            [styles.colorPaddingLarge as string]: colorPadding === 'large',
           }),
         },
         <>
