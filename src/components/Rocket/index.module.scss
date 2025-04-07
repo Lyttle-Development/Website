@@ -13,18 +13,43 @@
 
 @keyframes floating {
   0%, 100% {
-    transform: translate(-50%, -50%) translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translate(-50%, -50%) translateY(-10px) rotate(3deg);
+    transform: translateY(-10px) rotate(3deg);
   }
 }
 
+$spline-side-offset: 35rem;
+
+.rocket_parent {
+  z-index: 1;
+  position: absolute;
+  translate: -50% -50%;
+  $duration: 0.1s;
+  transition: left $duration ease-in-out, top $duration ease-in-out;//, rotate $duration ease-in-out;
+  left: -100vw;
+  top: 30vh;
+}
+
 .rocket {
-  position: fixed;
-  z-index: -1;
-  bottom: -100%;
-  left: -100%;
-  transform: translate(-50%);
   animation: rocketLaunch 2s forwards, floating 3s infinite ease-in-out;
+}
+
+.positioner {
+  position: absolute;
+  top: 0;
+  width: calc(100vw + 2 * $spline-side-offset);
+  left: -35rem;
+  right: -35rem;
+}
+
+.rocket_container {
+  position: relative;
+  width: 100%;
+  height: 100%
+}
+
+.debug_path {
+  width: 100%;
 }
