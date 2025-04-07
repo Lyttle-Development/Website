@@ -1,9 +1,10 @@
 import React, { FC, Fragment } from 'react'
 import type { Page } from '@/payload-types'
 import type { Block } from 'payload'
-import { exposedBuildingBlocks, importedBuildingBlocks } from '@/blocks/exposedBuildingBlocks'
+import { exposedLayoutBlocks, importedLayoutBlocks } from '@/blocks/exposedLayoutBlocks'
 import { exposedComponentBlocks, importedComponentBlocks } from '@/blocks/exposedComponentBlocks'
 import { exposedDecorativeBlocks, importedDecorativeBlocks } from '@/blocks/exposedDecorativeBlocks'
+import { exposedBuildingBlocks, importedBuildingBlocks } from '@/blocks/exposedBuildingBlocks'
 
 export interface ImportBlocks {
   [key: string]: [Block, FC<any>]
@@ -14,6 +15,7 @@ export interface BlockComponents {
 }
 
 export const exposedBlocks: Block[] = [
+  ...exposedLayoutBlocks,
   ...exposedBuildingBlocks,
   ...exposedComponentBlocks,
   ...exposedDecorativeBlocks,
@@ -21,6 +23,7 @@ export const exposedBlocks: Block[] = [
 
 export const getExposedBlockComponents = (): BlockComponents => {
   const componentBlocks: ImportBlocks = {
+    ...importedLayoutBlocks,
     ...importedBuildingBlocks,
     ...importedComponentBlocks,
     ...importedDecorativeBlocks,

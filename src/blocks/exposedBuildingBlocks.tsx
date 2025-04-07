@@ -1,12 +1,12 @@
 import type { Block } from 'payload'
-import { FlexibleRowConfig } from '@/blocks/FlexibleRow/config'
 import { exposedComponentBlocks } from '@/blocks/exposedComponentBlocks'
-import { FlexibleRowBlock } from '@/blocks/FlexibleRow/Component'
 import { ImportBlocks } from '@/blocks/RenderBlocks'
+import { GroupConfig } from '@/blocks/building/Group/config'
+import { GroupBlock } from '@/blocks/building/Group/Component'
 
 // Import all the blocks that will be exposed to the CMS
 export const importedBuildingBlocks: ImportBlocks = {
-  flexibleRow: [FlexibleRowConfig, FlexibleRowBlock],
+  group: [GroupConfig, GroupBlock],
 }
 
 ///////////////////////////////////////////////////////////////////////////

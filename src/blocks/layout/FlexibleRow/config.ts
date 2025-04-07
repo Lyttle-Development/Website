@@ -1,9 +1,9 @@
 import type { Block } from 'payload'
 import { exposedBuildingBlocks } from '@/blocks/exposedBuildingBlocks'
 
-export const SpaceBackgroundConfig: Block = {
-  slug: 'spaceBackground',
-  interfaceName: 'SpaceBackgroundBlock',
+export const FlexibleRowConfig: Block = {
+  slug: 'flexibleRow',
+  interfaceName: 'FlexibleRowBlock',
   fields: [
     {
       name: 'content',
