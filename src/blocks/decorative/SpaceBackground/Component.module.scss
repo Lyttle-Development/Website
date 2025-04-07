@@ -1,11 +1,12 @@
 .spaceBackground {
+  position: absolute;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 35vh;
-
-  // TODO: Remove when more content is added
-  margin-bottom: 250vh;
+  width: 100vw;
+  height: 100%;
 }
 
 .backgroundBanner {
@@ -14,8 +15,4 @@
   top: 0;
   width: 100%;
   object-fit: cover;
-}
-
-.content {
-
 }
