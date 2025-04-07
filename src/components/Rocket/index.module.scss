@@ -26,8 +26,8 @@ $spline-side-offset: 35rem;
   z-index: 1;
   position: absolute;
   translate: -50% -50%;
-  $duration: 0.1s;
-  transition: left $duration ease-in-out, top $duration ease-in-out;//, rotate $duration ease-in-out;
+  //$duration: 0.1s;
+  //transition: left $duration ease-in-out, top $duration ease-in-out;//, rotate $duration ease-in-out;
   left: -100vw;
   top: 30vh;
 }
@@ -47,7 +47,8 @@ $spline-side-offset: 35rem;
 .rocket_container {
   position: relative;
   width: 100%;
-  height: 100%
+  height: 100%;
+  translate: 0 10rem;
 }
 
 .debug_path {

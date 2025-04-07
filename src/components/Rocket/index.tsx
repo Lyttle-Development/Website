@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 
 function lerp(a: number, b: number, t: number) {
@@ -38,18 +38,23 @@ export const Rocket: React.FC = () => {
   const rocketPosRef = useRef<number>(0)
 
   const rocketStartAfterAnimation = 0.09
+  const animationDurationMs = 0.5 * 1000
+  const tickRate = 25
 
   useEffect(() => {
     setVh(document.documentElement.offsetHeight)
 
+    const totalTicks = animationDurationMs / tickRate
+    const step = rocketStartAfterAnimation / totalTicks
+
     const interval = setInterval(() => {
+      rocketPosRef.current += step
       setRocketPosition(rocketPosRef.current)
-      rocketPosRef.current += 0.01
 
       if (rocketPosRef.current >= rocketStartAfterAnimation) {
         clearInterval(interval)
       }
-    }, 50)
+    }, tickRate)
 
     return () => clearInterval(interval)
   }, [])
