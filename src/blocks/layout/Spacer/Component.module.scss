@@ -1,0 +1,12 @@
+.flexibleRow {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  & > * {
+    flex: 1 1 auto;
+    min-width: 200px; /* Adjust as needed */
+    max-width: 100%; /* Prevents overflow */
+  }
+}

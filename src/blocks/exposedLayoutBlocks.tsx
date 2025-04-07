@@ -3,10 +3,13 @@ import { FlexibleRowConfig } from '@/blocks/layout/FlexibleRow/config'
 import { FlexibleRowBlock } from '@/blocks/layout/FlexibleRow/Component'
 import { ImportBlocks } from '@/blocks/RenderBlocks'
 import { exposedBuildingBlocks } from '@/blocks/exposedBuildingBlocks'
+import { SpacerConfig } from '@/blocks/layout/Spacer/config'
+import { SpacerBlock } from '@/blocks/layout/Spacer/Component'
 
 // Import all the blocks that will be exposed to the CMS
 export const importedLayoutBlocks: ImportBlocks = {
   flexibleRow: [FlexibleRowConfig, FlexibleRowBlock],
+  spacer: [SpacerConfig, SpacerBlock],
 }
 
 ///////////////////////////////////////////////////////////////////////////
