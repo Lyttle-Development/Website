@@ -25,7 +25,7 @@ export const Rocket: React.FC = () => {
     return [point1, Math.atan2(dy, dx)]
   }
 
-  function setRocketPosition(t: number) {
+  function setRocketPosition(t: number, goingUp: boolean) {
     if (!rocketRef.current) return
 
     const [point, angle] = getPoint(t)
@@ -34,7 +34,7 @@ export const Rocket: React.FC = () => {
 
     const shouldFlip = Math.abs(angle / (Math.PI * 2)) * 360 > 90
 
-    rocketRef.current!.style.transform = `rotate(${angle}rad) scaleY(${shouldFlip ? -1 : 1})`
+    rocketRef.current!.style.transform = `rotate(${angle}rad) scaleY(${shouldFlip ? -1 : 1}) scaleX(${goingUp ? -1 : 1})`
   }
 
   const rocketPosRef = useRef<number>(0)
@@ -56,7 +56,7 @@ export const Rocket: React.FC = () => {
       const easedT = easeOutQuad(linearT) // Apply easing
 
       rocketPosRef.current = lerp(initialPosition, rocketStartAfterAnimation, easedT)
-      setRocketPosition(rocketPosRef.current)
+      setRocketPosition(rocketPosRef.current, false)
 
       if (linearT < 1) {
         requestAnimationFrame(update)
@@ -73,12 +73,15 @@ export const Rocket: React.FC = () => {
   }, [])
 
   useEffect(() => {
+    let lastScrollY = 0
     const handleScroll = () => {
       if (rocketRef.current && svgRef.current) {
         const offset = (window.scrollY / vh) * window.innerHeight
         const scrollY = window.scrollY + offset
+        const goingUp = scrollY < lastScrollY && scrollY > 0
+        lastScrollY = scrollY
 
-        setRocketPosition(scrollY / vh + rocketStartAfterAnimation)
+        setRocketPosition(scrollY / vh + rocketStartAfterAnimation, goingUp)
       }
     }
 
