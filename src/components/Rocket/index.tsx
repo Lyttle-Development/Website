@@ -1,12 +1,10 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { RefObject, useEffect, useRef, useState } from 'react'
 import styles from './index.module.scss'
 
-function lerp(a: number, b: number, t: number) {
-  const result = a + (b - a) * t
-  console.log(`${a} + (${b} - ${a}) * ${t} = ${result}`)
-  return result
-}
+const lerp = (start: number, end: number, t: number) => start * (1 - t) + end * t
+
+const easeOutQuad = (t: number) => 1 - (1 - t) ** 2
 
 export const Rocket: React.FC = () => {
   const rocketRef = useRef<HTMLDivElement>(null)
@@ -40,27 +38,36 @@ export const Rocket: React.FC = () => {
   const rocketPosRef = useRef<number>(0)
 
   const rocketStartAfterAnimation = 0.09
-  const animationDurationMs = 0.5 * 1000
-  const tickRate = 25
+  const animationDurationMs = 2 * 1000
+
+  function animateLerp(
+    durationMs: number,
+    rocketStartAfterAnimation: number,
+    rocketPosRef: RefObject<number>,
+  ) {
+    const startTime = performance.now()
+    const initialPosition = rocketPosRef.current
+
+    function update() {
+      const elapsed = performance.now() - startTime
+      const linearT = Math.min(elapsed / durationMs, 1)
+      const easedT = easeOutQuad(linearT) // Apply easing
+
+      rocketPosRef.current = lerp(initialPosition, rocketStartAfterAnimation, easedT)
+      setRocketPosition(rocketPosRef.current)
+
+      if (linearT < 1) {
+        requestAnimationFrame(update)
+      }
+    }
+
+    requestAnimationFrame(update)
+  }
 
   useEffect(() => {
     setVh(document.documentElement.offsetHeight)
 
-    const startTime = new Date().getTime()
-    const interval = setInterval(() => {
-      const i = tickRate / animationDurationMs
-      rocketPosRef.current = lerp(rocketPosRef.current, rocketStartAfterAnimation, i)
-
-      setRocketPosition(rocketPosRef.current)
-
-      if (rocketPosRef.current + 0.00215 >= rocketStartAfterAnimation) {
-        rocketPosRef.current = rocketStartAfterAnimation
-        console.log(new Date().getTime() - startTime)
-        clearInterval(interval)
-      }
-    }, tickRate)
-
-    return () => clearInterval(interval)
+    animateLerp(animationDurationMs, rocketStartAfterAnimation, rocketPosRef)
   }, [])
 
   useEffect(() => {
