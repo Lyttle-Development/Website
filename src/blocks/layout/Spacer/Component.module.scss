@@ -10,3 +10,9 @@
     max-width: 100%; /* Prevents overflow */
   }
 }
+
+@media (max-width: 80rem) {
+  .hideOnMobile {
+    display: none;
+  }
+}

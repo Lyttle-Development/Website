@@ -11,5 +11,11 @@ export const SpacerConfig: Block = {
       defaultValue: 1,
       required: true,
     },
+    {
+      name: 'hideOnMobile',
+      type: 'checkbox',
+      label: 'Hide on Mobile',
+      defaultValue: false,
+    },
   ],
 }

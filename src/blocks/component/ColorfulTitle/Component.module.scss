@@ -17,15 +17,17 @@
     font-style: italic;
   }
 
-  &.colorPaddingLight {
-    padding: 0 3rem;
-  }
+  @media (min-width: 80rem) {
+    &.colorPaddingLight {
+      padding: 0 3rem;
+    }
 
-  &.colorPaddingMedium {
-    padding: 0 6rem;
-  }
+    &.colorPaddingMedium {
+      padding: 0 6rem;
+    }
 
-  &.colorPaddingLarge {
-    padding: 0 9rem;
+    &.colorPaddingLarge {
+      padding: 0 9rem;
+    }
   }
 }
