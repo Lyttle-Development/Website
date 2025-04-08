@@ -10,5 +10,11 @@ export const GroupConfig: Block = {
       type: 'blocks',
       blocks: exposedComponentBlocks,
     },
+    {
+      name: 'maxWidth',
+      type: 'number',
+      label: 'Max Width',
+      defaultValue: 0,
+    },
   ],
 }

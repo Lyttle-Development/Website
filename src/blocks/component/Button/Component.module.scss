@@ -1,33 +1,12 @@
-.colorfulTitle {
+.button {
   display: inline-flex;
-  flex-direction: column;
-  width: fit-content;
-  font-size: 2rem;
+  padding: 1rem 3em;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 1.875rem;
 
-  &.reverseColor {
-    flex-direction: column-reverse;
-  }
-
-  &.reverseAlign {
-    align-items: flex-end;
-  }
-
-  .color {
-    font-family: serif;
-    font-style: italic;
-  }
-
-  @media (min-width: 80rem) {
-    &.colorPaddingLight {
-      padding: 0 3rem;
-    }
-
-    &.colorPaddingMedium {
-      padding: 0 6rem;
-    }
-
-    &.colorPaddingLarge {
-      padding: 0 9rem;
-    }
+  &.blue {
+    background: linear-gradient(90deg, #6C63FF 0%, rgba(108, 99, 255, 0.25) 100%);
   }
 }

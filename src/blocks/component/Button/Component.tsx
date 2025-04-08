@@ -7,17 +7,6 @@ export interface ButtonProps {
   color: string
 }
 
-function getGolor(color: string) {
-  switch (color) {
-    case 'blue':
-      return '#6C63FF'
-    case 'orange':
-      return '#FF6363'
-    default:
-      return '#ffffff'
-  }
-}
-
 export const ButtonBlock: React.FC<ButtonProps> = (props) => {
   const { text, color } = props
   return (
@@ -26,9 +15,6 @@ export const ButtonBlock: React.FC<ButtonProps> = (props) => {
         [styles.blue as string]: color === 'blue',
         [styles.orange as string]: color === 'orange',
       })}
-      style={{
-        backgroundColor: getGolor(color),
-      }}
     >
       {text}
     </button>

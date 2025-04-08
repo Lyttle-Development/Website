@@ -25,10 +25,11 @@ function randomNegative(rand: RandomSeed.RandomSeed) {
 interface RandomStarsProps {
   width?: string
   height?: string
+  seed?: string
 }
 
 export const RandomStars: React.FC<RandomStarsProps> = (props) => {
-  const { width = '50rem', height = '50rem' } = props
+  const { width = '50rem', height = '50rem', seed = RAND_SEED } = props
   const [numStars, setNumStars] = useState(0)
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export const RandomStars: React.FC<RandomStarsProps> = (props) => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  const rand = RandomSeed.create(RAND_SEED)
+  const rand = RandomSeed.create(seed)
 
   return (
     <div
