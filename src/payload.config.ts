@@ -79,10 +79,7 @@ export default buildConfig({
     },
   }),
   cors: [getServerSideURL()].filter(Boolean),
-  plugins: [
-    ...plugins,
-    // storage-adapter-placeholder
-  ],
+  plugins: [...plugins],
   secret: process.env.PAYLOAD_SECRET,
   sharp,
   typescript: {
