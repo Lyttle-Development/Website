@@ -1,36 +1,31 @@
+// Types
 import type { Block } from 'payload'
-import { ContentConfig } from '@/blocks/component/Content/config'
-import { MediaBlockConfig } from '@/blocks/component/MediaBlock/config'
-import { MediaBlock } from '@/blocks/component/MediaBlock/Component'
-import { ContentBlock } from '@/blocks/component/Content/Component'
-import { ImportBlocks } from '@/blocks/RenderBlocks'
-import { ArchiveBlock } from '@/blocks/component/ArchiveBlock/Component'
-import { CallToActionBlock } from '@/blocks/component/CallToAction/Component'
-import { FormBlock } from '@/blocks/component/Form/Component'
-import { FormBlockConfig } from '@/blocks/component/Form/config'
-import { ArchiveConfig } from '@/blocks/component/ArchiveBlock/config'
-import { CallToActionConfig } from '@/blocks/component/CallToAction/config'
-import { ColorfulTitleConfig } from '@/blocks/component/ColorfulTitle/config'
-import { ColorfulTitleBlock } from '@/blocks/component/ColorfulTitle/Component'
+import type { ImportBlocks } from '@/blocks/RenderBlocks'
+
+// Usages
 import { exposedDecorativeBlocks } from '@/blocks/exposedDecorativeBlocks'
+
+// Imports
+import { ButtonBlock } from '@/blocks/component/Button/Component'
+import { ButtonConfig } from './component/Button/config'
+import { ColorfulTitleBlock } from '@/blocks/component/ColorfulTitle/Component'
+import { ColorfulTitleConfig } from '@/blocks/component/ColorfulTitle/config'
+import { RichTextBlock } from '@/blocks/component/RichText/Component'
+import { RichTextConfig } from './component/RichText/config'
 
 // Import all the component blocks that will be exposed to the CMS
 export const importedComponentBlocks: ImportBlocks = {
+  button: [ButtonConfig, ButtonBlock],
   colorfulTitle: [ColorfulTitleConfig, ColorfulTitleBlock],
-
-  content: [ContentConfig, ContentBlock],
-  mediaBlock: [MediaBlockConfig, MediaBlock],
-
-  archive: [ArchiveConfig, ArchiveBlock],
-  cta: [CallToActionConfig, CallToActionBlock],
-  formBlock: [FormBlockConfig, FormBlock],
+  richText: [RichTextConfig, RichTextBlock],
 }
 
 ///////////////////////////////////////////////////////////////////////////
 // !!! Dynamic Code Generation !!!
 ///////////////////////////////////////////////////////////////////////////
+export const exposedRawComponentBlocks: Block[] = Object.values(importedComponentBlocks).map((b) => b[0])
 export const exposedComponentBlocks: Block[] = [
-  ...Object.values(importedComponentBlocks).map((b) => b[0]),
+  ...exposedRawComponentBlocks,
   ...exposedDecorativeBlocks,
 ]
 ///////////////////////////////////////////////////////////////////////////

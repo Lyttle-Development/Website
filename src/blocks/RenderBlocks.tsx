@@ -1,10 +1,14 @@
 import React, { FC, Fragment } from 'react'
 import type { Page } from '@/payload-types'
 import type { Block } from 'payload'
-import { exposedLayoutBlocks, importedLayoutBlocks } from '@/blocks/exposedLayoutBlocks'
-import { exposedComponentBlocks, importedComponentBlocks } from '@/blocks/exposedComponentBlocks'
-import { exposedDecorativeBlocks, importedDecorativeBlocks } from '@/blocks/exposedDecorativeBlocks'
-import { exposedBuildingBlocks, importedBuildingBlocks } from '@/blocks/exposedBuildingBlocks'
+import { exposedRawLayoutBlocks, importedLayoutBlocks } from '@/blocks/exposedLayoutBlocks'
+import { exposedRawComponentBlocks, importedComponentBlocks } from '@/blocks/exposedComponentBlocks'
+import {
+  exposedRawDecorativeBlocks,
+  importedDecorativeBlocks,
+} from '@/blocks/exposedDecorativeBlocks'
+import { exposedRawBuildingBlocks, importedBuildingBlocks } from '@/blocks/exposedBuildingBlocks'
+import { importedBuildInBlocks } from '@/blocks/exposedBuildInBlocks'
 
 export interface ImportBlocks {
   [key: string]: [Block, FC<any>]
@@ -15,10 +19,11 @@ export interface BlockComponents {
 }
 
 export const exposedBlocks: Block[] = [
-  ...exposedLayoutBlocks,
-  ...exposedBuildingBlocks,
-  ...exposedComponentBlocks,
-  ...exposedDecorativeBlocks,
+  ...exposedRawLayoutBlocks,
+  ...exposedRawBuildingBlocks,
+  ...exposedRawComponentBlocks,
+  ...exposedRawDecorativeBlocks,
+  // ...exposedRawBuildInBlocks,
 ]
 
 export const getExposedBlockComponents = (): BlockComponents => {
@@ -27,6 +32,7 @@ export const getExposedBlockComponents = (): BlockComponents => {
     ...importedBuildingBlocks,
     ...importedComponentBlocks,
     ...importedDecorativeBlocks,
+    ...importedBuildInBlocks,
   }
   return Object.keys(componentBlocks).reduce((acc, key) => {
     const blockConfigTuple = componentBlocks[key]
