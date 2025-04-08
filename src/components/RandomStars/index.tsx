@@ -26,15 +26,23 @@ interface RandomStarsProps {
   width?: string
   height?: string
   seed?: string
+  className?: string
+  density?: number
 }
 
 export const RandomStars: React.FC<RandomStarsProps> = (props) => {
-  const { width = '50rem', height = '50rem', seed = RAND_SEED } = props
+  const {
+    width = '50rem',
+    height = '50rem',
+    seed = RAND_SEED,
+    className,
+    density = DISTANCE_BETWEEN,
+  } = props
   const [numStars, setNumStars] = useState(0)
 
   useEffect(() => {
     const handleResize = () => {
-      setNumStars(Math.floor(window.innerWidth / DISTANCE_BETWEEN))
+      setNumStars(Math.floor(window.innerWidth / density))
     }
     handleResize()
     window.addEventListener('resize', handleResize)
@@ -45,7 +53,7 @@ export const RandomStars: React.FC<RandomStarsProps> = (props) => {
 
   return (
     <div
-      className={classNames(styles.stars)}
+      className={classNames(styles.stars, className)}
       style={{
         width,
         height,

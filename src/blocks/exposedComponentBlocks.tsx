@@ -6,6 +6,8 @@ import type { ImportBlocks } from '@/blocks/RenderBlocks'
 import { exposedDecorativeBlocks } from '@/blocks/exposedDecorativeBlocks'
 
 // Imports
+import { BannerTitleBlock } from './component/BannerTitle/Component'
+import { BannerTitleConfig } from '@/blocks/component/BannerTitle/config'
 import { ButtonBlock } from '@/blocks/component/Button/Component'
 import { ButtonConfig } from './component/Button/config'
 import { ColorfulTitleBlock } from '@/blocks/component/ColorfulTitle/Component'
@@ -15,6 +17,7 @@ import { RichTextConfig } from './component/RichText/config'
 
 // Import all the component blocks that will be exposed to the CMS
 export const importedComponentBlocks: ImportBlocks = {
+  bannerTitle: [BannerTitleConfig, BannerTitleBlock],
   button: [ButtonConfig, ButtonBlock],
   colorfulTitle: [ColorfulTitleConfig, ColorfulTitleBlock],
   richText: [RichTextConfig, RichTextBlock],
