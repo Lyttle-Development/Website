@@ -32,4 +32,8 @@
     left: 25rem;
     max-width: 4rem;
   }
+
+  @media (max-width: 80rem) {
+    display: none;
+  }
 }

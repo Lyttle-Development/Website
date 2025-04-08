@@ -28,7 +28,7 @@ interface RandomStarsProps {
   seed?: string
   className?: string
   density?: number
-  containerRef?: React.RefObject<any> | Window
+  containerRef?: React.RefObject<any>
 }
 
 export const RandomStars: React.FC<RandomStarsProps> = (props) => {
@@ -38,19 +38,17 @@ export const RandomStars: React.FC<RandomStarsProps> = (props) => {
     seed = RAND_SEED,
     className,
     density = DISTANCE_BETWEEN,
-    containerRef = window,
+    containerRef = null,
   } = props
   const [numStars, setNumStars] = useState(0)
 
   useEffect(() => {
     const handleResize = () => {
       let innerWidth = 0
-      console.log('containerRef', containerRef)
-      if ('innerWidth' in containerRef) {
-        innerWidth = containerRef.innerWidth as number
-      }
-      if ('current' in containerRef && 'clientWidth' in containerRef.current) {
+      if (containerRef && 'current' in containerRef && 'clientWidth' in containerRef.current) {
         innerWidth = containerRef.current.clientWidth as number
+      } else {
+        innerWidth = window.innerWidth
       }
       setNumStars(Math.floor(innerWidth / density))
     }
