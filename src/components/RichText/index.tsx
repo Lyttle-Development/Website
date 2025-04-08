@@ -1,9 +1,9 @@
-import { MediaBlock } from '@/blocks/MediaBlock/Component'
+import { MediaBlock } from '@/blocks/build-in/MediaBlock/Component'
 import {
   DefaultNodeTypes,
+  type DefaultTypedEditorState,
   SerializedBlockNode,
   SerializedLinkNode,
-  type DefaultTypedEditorState,
 } from '@payloadcms/richtext-lexical'
 import {
   JSXConvertersFunction,
@@ -11,15 +11,15 @@ import {
   RichText as ConvertRichText,
 } from '@payloadcms/richtext-lexical/react'
 
-import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
+import { CodeBlock, CodeBlockProps } from '@/blocks/build-in/Code/Component'
 
 import type {
   BannerBlock as BannerBlockProps,
   CallToActionBlock as CTABlockProps,
   MediaBlock as MediaBlockProps,
 } from '@/payload-types'
-import { BannerBlock } from '@/blocks/Banner/Component'
-import { CallToActionBlock } from '@/blocks/CallToAction/Component'
+import { BannerBlock } from '@/blocks/build-in/Banner/Component'
+import { CallToActionBlock } from '@/blocks/build-in/CallToAction/Component'
 import { cn } from '@/utilities/ui'
 
 type NodeTypes =

@@ -2,11 +2,6 @@ import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { Archive } from '../../blocks/ArchiveBlock/config'
-import { CallToAction } from '../../blocks/CallToAction/config'
-import { Content } from '../../blocks/Content/config'
-import { FormBlock } from '../../blocks/Form/config'
-import { MediaBlock } from '../../blocks/MediaBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -20,14 +15,17 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+import { collectionEnabled } from '@/utilities/collectionEnabled'
+import { MODULE_ENABLED } from '../../../constrants'
+import { exposedBlocks } from '@/blocks/RenderBlocks'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
   access: {
-    create: authenticated,
-    delete: authenticated,
-    read: authenticatedOrPublished,
-    update: authenticated,
+    create: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticated, args),
+    delete: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticated, args),
+    read: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticatedOrPublished, args),
+    update: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticated, args),
   },
   // This config controls what's populated by default when a page is referenced
   // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property
@@ -75,7 +73,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock],
+              blocks: exposedBlocks,
               required: true,
               admin: {
                 initCollapsed: true,

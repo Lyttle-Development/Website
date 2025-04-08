@@ -1,0 +1,267 @@
+/* v2.2.0
+Lyttle Reset ~ Recommended to use with Lyttle Defaults:
+https://github.com/Stualyttle/MyLyttleTools/blob/main/CSS/reset.css
+
+MIT License
+
+Copyright (c) 2024 Stualyttle Kirry
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  content: "";
+  content: none;
+  margin: 0;
+  padding: 0;
+  /* word-wrap: break-word; */
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    -webkit-animation-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    -webkit-transition-duration: .01ms !important;
+    -o-transition-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  line-height: 1;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+button,
+[type="button"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+img,
+picture {
+  border-style: none;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+::-webkit-input-placeholder {
+  background: none;
+  border: none;
+  /* color: inherit; */
+  /* font: inherit; */
+  opacity: 1;
+  overflow: visible;
+  text-transform: inherit;
+}
+
+::-moz-placeholder {
+  background: none;
+  border: none;
+  /* color: inherit; */
+  /* font: inherit; */
+  opacity: 1;
+  overflow: visible;
+  text-transform: inherit;
+}
+
+:-ms-input-placeholder {
+  background: none;
+  border: none;
+  /* color: inherit; */
+  /* font: inherit; */
+  opacity: 1;
+  overflow: visible;
+  text-transform: inherit;
+}
+
+::-ms-input-placeholder {
+  background: none;
+  border: none;
+  /* color: inherit; */
+  /* font: inherit; */
+  opacity: 1;
+  overflow: visible;
+  text-transform: inherit;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,
+::placeholder {
+  background: none;
+  border: none;
+  /* color: inherit; */
+  /* font: inherit; */
+  opacity: 1;
+  overflow: visible;
+  text-transform: inherit;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  border: 0;
+  /* color: inherit; */
+  /* font: inherit; */
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  text-decoration: inherit;
+  vertical-align: baseline;
+}
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+li {
+  list-style: none;
+}

@@ -11,24 +11,34 @@ import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
 import { Users } from './collections/Users'
-import { Footer } from './Footer/config'
-import { Header } from './Header/config'
+import { Footer } from './components/Footer/config'
+import { Header } from './components/Header/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
+import { WEBSITE_NAME } from 'constrants'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  collections: [Pages, Posts, Media, Categories, Users],
+  globals: [Header, Footer],
   admin: {
+    meta: {
+      titleSuffix: '| ' + WEBSITE_NAME,
+      icons: {
+        icon: '/favicon.ico',
+      },
+    },
     components: {
-      // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
-      // Feel free to delete this at any time. Simply remove the line below and the import `BeforeLogin` statement on line 15.
-      beforeLogin: ['@/components/BeforeLogin'],
-      // The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
-      // Feel free to delete this at any time. Simply remove the line below and the import `BeforeDashboard` statement on line 15.
-      beforeDashboard: ['@/components/BeforeDashboard'],
+      beforeLogin: [],
+      beforeDashboard: [],
+      graphics: {
+        Logo: '@/graphics/Logo',
+        Icon: '@/graphics/Favicon',
+      },
     },
     importMap: {
       baseDir: path.resolve(dirname),
@@ -68,9 +78,7 @@ export default buildConfig({
       max: 5, // maximum number of clients in the pool
     },
   }),
-  collections: [Pages, Posts, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
-  globals: [Header, Footer],
   plugins: [
     ...plugins,
     // storage-adapter-placeholder
@@ -95,4 +103,24 @@ export default buildConfig({
     },
     tasks: [],
   },
+  email:
+    process.env.EMAIL_ADDRESS &&
+    process.env.EMAIL_NAME &&
+    process.env.SMTP_HOST &&
+    process.env.SMTP_USER &&
+    process.env.SMTP_PASS
+      ? nodemailerAdapter({
+          defaultFromAddress: process.env.EMAIL_ADDRESS || '',
+          defaultFromName: process.env.EMAIL_NAME || '',
+          // Nodemailer transportOptions
+          transportOptions: {
+            host: process.env.SMTP_HOST,
+            port: 587,
+            auth: {
+              user: process.env.SMTP_USER,
+              pass: process.env.SMTP_PASS,
+            },
+          },
+        })
+      : undefined,
 })

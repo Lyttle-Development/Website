@@ -11,9 +11,9 @@ import {
 
 import { authenticated } from '../../access/authenticated'
 import { authenticatedOrPublished } from '../../access/authenticatedOrPublished'
-import { Banner } from '../../blocks/Banner/config'
-import { Code } from '../../blocks/Code/config'
-import { MediaBlock } from '../../blocks/MediaBlock/config'
+import { Banner } from '@/blocks/build-in/Banner/config'
+import { Code } from '@/blocks/build-in/Code/config'
+import { MediaBlockConfig } from '@/blocks/build-in/MediaBlock/config'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { populateAuthors } from './hooks/populateAuthors'
 import { revalidateDelete, revalidatePost } from './hooks/revalidatePost'
@@ -26,14 +26,16 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { slugField } from '@/fields/slug'
+import { collectionEnabled } from '@/utilities/collectionEnabled'
+import { MODULE_ENABLED } from '../../../constrants'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
   access: {
-    create: authenticated,
-    delete: authenticated,
-    read: authenticatedOrPublished,
-    update: authenticated,
+    create: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticated, args),
+    delete: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticated, args),
+    read: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticatedOrPublished, args),
+    update: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticated, args),
   },
   // This config controls what's populated by default when a post is referenced
   // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property
@@ -92,7 +94,7 @@ export const Posts: CollectionConfig<'posts'> = {
                   return [
                     ...rootFeatures,
                     HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Banner, Code, MediaBlock] }),
+                    BlocksFeature({ blocks: [Banner, Code, MediaBlockConfig] }),
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),

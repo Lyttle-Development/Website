@@ -1,0 +1,17 @@
+.button {
+  display: inline-flex;
+  padding: 1rem 3em;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 1.875rem;
+  width: fit-content;
+
+  &.blue {
+    background: linear-gradient(90deg, #6C63FF 0%, rgba(108, 99, 255, 0.25) 100%);
+  }
+
+  &.orange {
+    background: linear-gradient(90deg, #FF6363 0%, rgba(255, 99, 99, 0.25) 100%);
+  }
+}
