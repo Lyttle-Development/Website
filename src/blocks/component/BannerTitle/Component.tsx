@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import styles from './Component.module.scss'
 import classNames from 'classnames'
@@ -12,9 +13,10 @@ export interface BannerTitleProps {
 const seed = 'pZLA8XwW5PN2rKeCEmJ7nR'
 
 export const BannerTitleBlock: React.FC<BannerTitleProps> = (props) => {
+  const ref = React.useRef<HTMLDivElement>(null)
   const { title, headingType, reverseAlign } = props
   return (
-    <article className={styles.bannerTitle}>
+    <article className={styles.bannerTitle} ref={ref}>
       {React.createElement(
         headingType || 'h1',
         {
@@ -33,7 +35,8 @@ export const BannerTitleBlock: React.FC<BannerTitleProps> = (props) => {
           height="10rem"
           seed={seed}
           className={styles.stars}
-          density={300}
+          containerRef={ref}
+          density={100}
         />
       </div>
     </article>
