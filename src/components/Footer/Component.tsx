@@ -1,11 +1,11 @@
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import Link from 'next/link'
 import React from 'react'
+import styles from './Component.module.scss'
 
 import type { Footer } from '@/payload-types'
-
-import { CMSLink } from '@/components/Link'
 import { Logo } from '@/components/Logo'
+import classNames from 'classnames'
 
 export async function Footer() {
   const footerData: Footer = await getCachedGlobal('footer', 1)()
@@ -13,20 +13,37 @@ export async function Footer() {
   const navItems = footerData?.navItems || []
 
   return (
-    <footer className="mt-auto border-t border-border bg-black bg-card text-white">
-      <div className="container py-8 gap-8 flex flex-col md:flex-row md:justify-between">
+    <footer className={classNames(styles.footer)}>
+      <section className={classNames('container', styles.content)}>
         <Link className="flex items-center" href="/">
           <Logo />
         </Link>
 
-        <div className="flex flex-col-reverse items-start md:flex-row gap-4 md:items-center">
-          <nav className="flex flex-col md:flex-row gap-4">
-            {navItems.map(({ link }, i) => {
-              return <CMSLink className="text-white" key={i} {...link} />
-            })}
-          </nav>
-        </div>
-      </div>
+        <article>
+          <p>Damstraat 65</p>
+          <p>9180 Lokeren</p>
+        </article>
+
+        <article>
+          <a href="tel:+32470216421">+32 470 21 64 21</a>
+          <a href="mailto:hello@lyttledevelopment.com">hello@lyttledevelopment.com</a>
+        </article>
+
+        <article>
+          <a href="/">algemene voorwaarden</a>
+          <a href="/">cookie policy</a>
+        </article>
+
+        <article>
+          <a href="/">intragram</a>
+          <a href="/">linkedin</a>
+        </article>
+      </section>
+      <img
+        src={`/svgs/blobs/footer.svg`}
+        alt="Header Background Banner"
+        className={styles.banner}
+      />
     </footer>
   )
 }
