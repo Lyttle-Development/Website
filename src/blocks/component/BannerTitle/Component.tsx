@@ -18,14 +18,16 @@ export const BannerTitleBlock: React.FC<BannerTitleProps> = (props) => {
       {React.createElement(
         headingType || 'h1',
         {
-          className: classNames(styles.colorfulTitle, {
-            [styles.reverseAlign as string]: reverseAlign,
-          }),
+          className: classNames(styles.colorfulTitle),
         },
         <>{title}</>,
       )}
       <div className={styles.background}>
-        <div className={styles.circle} />
+        <div
+          className={classNames(styles.circle, {
+            [styles.reverseAlign as string]: reverseAlign,
+          })}
+        />
         <RandomStars
           width="45rem"
           height="10rem"

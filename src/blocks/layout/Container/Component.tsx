@@ -3,16 +3,16 @@ import { RenderBlock, RenderBlocks } from '@/blocks/RenderBlocks'
 import styles from './Component.module.scss'
 import classNames from 'classnames'
 
-export interface FlexibleRowProps {
+export interface ContainerProps {
   content: RenderBlock[]
   container?: boolean
 }
 
-export const FlexibleRowBlock: React.FC<FlexibleRowProps> = (props) => {
+export const ContainerBlock: React.FC<ContainerProps> = (props) => {
   const { content, container } = props
   return (
     <section
-      className={classNames(styles.flexibleRow, {
+      className={classNames(styles.container, {
         container: container || false,
       })}
     >

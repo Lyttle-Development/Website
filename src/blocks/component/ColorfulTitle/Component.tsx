@@ -36,6 +36,7 @@ export const ColorfulTitleBlock: React.FC<SpaceBackgroundProps> = (props) => {
             [styles.colorPaddingLight as string]: colorPadding === 'light',
             [styles.colorPaddingMedium as string]: colorPadding === 'medium',
             [styles.colorPaddingLarge as string]: colorPadding === 'large',
+            [styles.colorPaddingAuto as string]: colorPadding === 'auto',
           }),
         },
         <>

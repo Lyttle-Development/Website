@@ -6,7 +6,7 @@
   text-align: center;
   position: relative;
   width: fit-content;
-  margin: 0 auto;
+  margin: 10rem auto;
 
   .background {
     z-index: -1;
@@ -14,12 +14,18 @@
     .circle {
       position: absolute;
       top: -6.5rem;
-      right: -3rem;
       width: 14rem;
       height: 14rem;
       background-color: #6C63FF;
       opacity: 0.18;
       border-radius: 50%;
+
+      left: -3rem;
+
+      &.reverseAlign {
+        left: initial;
+        right: -3rem;
+      }
     }
 
     .stars {

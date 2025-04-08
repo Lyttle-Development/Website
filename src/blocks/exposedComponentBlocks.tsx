@@ -9,9 +9,13 @@ import { exposedDecorativeBlocks } from '@/blocks/exposedDecorativeBlocks'
 import { BannerTitleBlock } from './component/BannerTitle/Component'
 import { BannerTitleConfig } from '@/blocks/component/BannerTitle/config'
 import { ButtonBlock } from '@/blocks/component/Button/Component'
+import { ButtonCardBlock } from '@/blocks/component/ButtonCard/Component'
+import { ButtonCardConfig } from '@/blocks/component/ButtonCard/config'
 import { ButtonConfig } from './component/Button/config'
 import { ColorfulTitleBlock } from '@/blocks/component/ColorfulTitle/Component'
 import { ColorfulTitleConfig } from '@/blocks/component/ColorfulTitle/config'
+import { PreviewBlock } from '@/blocks/component/Preview/Component'
+import { PreviewConfig } from '@/blocks/component/Preview/config'
 import { RichTextBlock } from '@/blocks/component/RichText/Component'
 import { RichTextConfig } from './component/RichText/config'
 
@@ -19,7 +23,9 @@ import { RichTextConfig } from './component/RichText/config'
 export const importedComponentBlocks: ImportBlocks = {
   bannerTitle: [BannerTitleConfig, BannerTitleBlock],
   button: [ButtonConfig, ButtonBlock],
+  buttonCard: [ButtonCardConfig, ButtonCardBlock],
   colorfulTitle: [ColorfulTitleConfig, ColorfulTitleBlock],
+  preview: [PreviewConfig, PreviewBlock],
   richText: [RichTextConfig, RichTextBlock],
 }
 

@@ -13,7 +13,7 @@
   }
 
   .color {
-    font-family: serif;
+    font-family: "DM Serif Display", serif;
     font-style: italic;
   }
 
@@ -29,5 +29,9 @@
     &.colorPaddingLarge {
       padding: 0 9rem;
     }
+  }
+
+  &.colorPaddingAuto {
+    margin-left: auto;
   }
 }

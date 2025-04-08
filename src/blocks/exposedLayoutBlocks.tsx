@@ -6,11 +6,14 @@ import type { ImportBlocks } from '@/blocks/RenderBlocks'
 import { exposedBuildingBlocks } from '@/blocks/exposedBuildingBlocks'
 
 // Imports
+import { ContainerBlock } from '@/blocks/layout/Container/Component'
+import { ContainerConfig } from '@/blocks/layout/Container/config'
 import { FlexibleRowBlock } from '@/blocks/layout/FlexibleRow/Component'
 import { FlexibleRowConfig } from '@/blocks/layout/FlexibleRow/config'
 
 // Import all the blocks that will be exposed to the CMS
 export const importedLayoutBlocks: ImportBlocks = {
+  container: [ContainerConfig, ContainerBlock],
   flexibleRow: [FlexibleRowConfig, FlexibleRowBlock],
 }
 

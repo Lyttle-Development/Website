@@ -3,6 +3,8 @@ import type { Block } from 'payload'
 import type { ImportBlocks } from '@/blocks/RenderBlocks'
 
 // Imports
+import { MoonVisualBlock } from '@/blocks/decorative/MoonVisual/Component'
+import { MoonVisualConfig } from '@/blocks/decorative/MoonVisual/config'
 import { PlanetsVisualBlock } from '@/blocks/decorative/PlanetsVisual/Component'
 import { PlanetsVisualConfig } from '@/blocks/decorative/PlanetsVisual/config'
 import { SpaceBackgroundBlock } from '@/blocks/decorative/SpaceBackground/Component'
@@ -10,6 +12,7 @@ import { SpaceBackgroundConfig } from '@/blocks/decorative/SpaceBackground/confi
 
 // Import all the blocks that will be exposed to the CMS
 export const importedDecorativeBlocks: ImportBlocks = {
+  moonVisual: [MoonVisualConfig, MoonVisualBlock],
   planetsVisual: [PlanetsVisualConfig, PlanetsVisualBlock],
   spaceBackground: [SpaceBackgroundConfig, SpaceBackgroundBlock],
 }

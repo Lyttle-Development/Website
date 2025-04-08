@@ -12,9 +12,15 @@ import { Providers } from '@/providers'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
 
+// Poppins
 import '@fontsource/poppins' // Defaults to weight 400
 import '@fontsource/poppins/400.css' // Specify weight
 import '@fontsource/poppins/400-italic.css' // Specify weight and style
+// DM Serif Display
+import '@fontsource/dm-serif-display' // Defaults to weight 400
+import '@fontsource/dm-serif-display/400.css' // Specify weight
+import '@fontsource/dm-serif-display/400-italic.css' // Specify weight and style
+// Defaults
 import './reset.css'
 import './globals.css'
 
