@@ -12,8 +12,12 @@ import { Providers } from '@/providers'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
 
+import '@fontsource/poppins' // Defaults to weight 400
+import '@fontsource/poppins/400.css' // Specify weight
+import '@fontsource/poppins/400-italic.css' // Specify weight and style
 import './reset.css'
 import './globals.css'
+
 import { getServerSideURL } from '@/utilities/getURL'
 import { SvgSpriteSheet } from '@/svg/SvgSpriteSheet'
 
