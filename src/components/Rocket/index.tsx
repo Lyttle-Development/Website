@@ -9,6 +9,8 @@ const easeOutQuad = (t: number) => 1 - (1 - t) ** 2
 export const Rocket: React.FC = () => {
   const rocketRef = useRef<HTMLDivElement>(null)
   const [vh, setVh] = useState(1)
+  const [userScrolled, setUserScrolled] = useState(false)
+  const userScrolledRef = useRef(userScrolled)
 
   const pathRef = useRef<SVGPathElement>(null)
   const svgRef = useRef<SVGSVGElement>(null)
@@ -33,7 +35,6 @@ export const Rocket: React.FC = () => {
     rocketRef.current!.style.left = `calc(${point.x * 100}%)`
 
     const shouldFlip = Math.abs(angle / (Math.PI * 2)) * 360 > 90
-
     rocketRef.current!.style.transform = `rotate(${angle}rad) scaleY(${shouldFlip ? -1 : 1}) scaleX(${goingUp ? -1 : 1})`
   }
 
@@ -55,8 +56,11 @@ export const Rocket: React.FC = () => {
       const linearT = Math.min(elapsed / durationMs, 1)
       const easedT = easeOutQuad(linearT) // Apply easing
 
-      rocketPosRef.current = lerp(initialPosition, rocketStartAfterAnimation, easedT)
-      setRocketPosition(rocketPosRef.current, false)
+      // Use the ref instead of the captured state value
+      if (!userScrolledRef.current) {
+        rocketPosRef.current = lerp(initialPosition, rocketStartAfterAnimation, easedT)
+        setRocketPosition(rocketPosRef.current, false)
+      }
 
       if (linearT < 1) {
         requestAnimationFrame(update)
@@ -68,13 +72,17 @@ export const Rocket: React.FC = () => {
 
   useEffect(() => {
     setVh(document.documentElement.offsetHeight)
-
     animateLerp(animationDurationMs, rocketStartAfterAnimation, rocketPosRef)
   }, [])
 
   useEffect(() => {
     let lastScrollY = 0
     const handleScroll = () => {
+      if (window.scrollY !== 0 && !userScrolledRef.current) {
+        setUserScrolled(true)
+        userScrolledRef.current = true
+      }
+
       if (rocketRef.current && svgRef.current) {
         const offset = (window.scrollY / vh) * window.innerHeight
         const scrollY = window.scrollY + offset
@@ -136,7 +144,6 @@ export const Rocket: React.FC = () => {
             viewBox="0 0 1 1"
             height={vh}
             className={styles.debug_path}
-            // preserveAspectRatio="xMidYMax slice"
             preserveAspectRatio="none"
             ref={svgRef}
           >
@@ -145,7 +152,6 @@ export const Rocket: React.FC = () => {
               d={str + split}
               fill="none"
               stroke="transparent"
-              // stroke="white"
               strokeWidth={0.01}
             />
           </svg>

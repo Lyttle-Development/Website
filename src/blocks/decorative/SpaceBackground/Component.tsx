@@ -15,9 +15,11 @@ export const SpaceBackgroundBlock: React.FC<SpaceBackgroundProps> = () => {
         alt="Header Background Banner"
         className={styles.backgroundBanner}
       />
-      <RandomStars width="100vw" height="calc(100vh - 2rem)" />
-      <RandomCircles width="100vw" height="calc(100vh - 2rem)" />
-      <Rocket />
+      <RandomStars width="100vw" height="60rem" />
+      <RandomCircles width="100vw" height="60rem" />
+      <div className={styles.rocket}>
+        <Rocket />
+      </div>
     </div>
   )
 }
