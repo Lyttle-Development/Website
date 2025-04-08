@@ -1,4 +1,5 @@
-import type { Post, ArchiveBlock as ArchiveBlockProps } from '@/payload-types'
+// @ts-ignore
+import type { ArchiveBlock as ArchiveBlockProps, Post } from '@/payload-types'
 
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
@@ -21,6 +22,7 @@ export const ArchiveBlock: React.FC<
   if (populateBy === 'collection') {
     const payload = await getPayload({ config: configPromise })
 
+    // @ts-ignore
     const flattenedCategories = categories?.map((category) => {
       if (typeof category === 'object') return category.id
       else return category
@@ -44,6 +46,7 @@ export const ArchiveBlock: React.FC<
     posts = fetchedPosts.docs
   } else {
     if (selectedDocs?.length) {
+      // @ts-ignore
       const filteredSelectedPosts = selectedDocs.map((post) => {
         if (typeof post.value === 'object') return post.value
       }) as Post[]
