@@ -1,12 +1,20 @@
+@use "~@/styles/variables.scss" as v;
+
 .footer {
   padding-top: 15rem;
   width: 100vw;
 
   .content {
-    display: flex;
+    display: none;
+
+    @media (min-width: v.$breakpoint-desktop) {
+      display: flex;
+    }
     justify-content: space-between;
     align-items: center;
     margin-bottom: -18rem;
+    flex-wrap: wrap;
+    gap: 2rem;
 
     > article {
       display: flex;
