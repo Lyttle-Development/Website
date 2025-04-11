@@ -14,7 +14,7 @@ body {
   overflow-x: clip;
 
   &.loading {
-    opacity: 0;
+    opacity: var(--loading-start-opacity, 0);
   }
 }
 
