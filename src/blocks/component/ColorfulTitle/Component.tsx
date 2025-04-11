@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Component.module.scss'
 import classNames from 'classnames'
+import { colors } from '@/styles/variables'
 
 export interface SpaceBackgroundProps {
   headingType: string // e.g., 'h1', 'h2', etc.
@@ -15,11 +16,11 @@ export interface SpaceBackgroundProps {
 function getGolor(color: string) {
   switch (color) {
     case 'blue':
-      return '#6C63FF'
+      return colors.primary
     case 'orange':
-      return '#FF6363'
+      return colors.secondary
     default:
-      return '#ffffff'
+      return colors.text
   }
 }
 

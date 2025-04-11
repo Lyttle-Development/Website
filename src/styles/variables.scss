@@ -1,4 +1,5 @@
 @use "sass:map";
+//@use "~@/styles/variables.scss" as v;
 
 // Colors
 $color-background: #100429;
@@ -32,6 +33,17 @@ $font-size-extra-large: 1.25rem; // 20px
 $font-size-2-extra-large: 1.5rem; // 24px
 $font-size-3-extra-large: 1.75rem; // 28px
 
+$fonts: (
+  "2-extra-small": $font-size-2-extra-small,
+  "extra-small": $font-size-extra-small,
+  "small": $font-size-small,
+  "base": $font-size-base,
+  "large": $font-size-large,
+  "extra-large": $font-size-extra-large,
+  "2-extra-large": $font-size-2-extra-large,
+  "3-extra-large": $font-size-3-extra-large,
+);
+
 
 // Font weights
 $font-weight-lightest: 100;
@@ -44,6 +56,18 @@ $font-weight-bold: 700;
 $font-weight-extra-bold: 800;
 $font-weight-black: 900;
 
+$font-weights: (
+  "lightest": $font-weight-lightest,
+  "extra-light": $font-weight-extra-light,
+  "light": $font-weight-light,
+  "normal": $font-weight-normal,
+  "medium": $font-weight-medium,
+  "semi-bold": $font-weight-semi-bold,
+  "bold": $font-weight-bold,
+  "extra-bold": $font-weight-extra-bold,
+  "black": $font-weight-black,
+);
+
 
 // Breakpoints
 $breakpoint-small: 40rem; // 640px
@@ -52,5 +76,14 @@ $breakpoint-large: 64rem; // 1024px
 $breakpoint-extra-large: 80rem; // 1280px
 $breakpoint-2-extra-large: 96rem; // 1536px
 $breakpoint-3-extra-large: 128rem; // 1920px
+
+$breakpoints: (
+  "small": $breakpoint-small,
+  "medium": $breakpoint-medium,
+  "large": $breakpoint-large,
+  "extra-large": $breakpoint-extra-large,
+  "2-extra-large": $breakpoint-2-extra-large,
+  "3-extra-large": $breakpoint-3-extra-large,
+);
 
 

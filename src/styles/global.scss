@@ -1,5 +1,6 @@
 @use "@/styles/reset";
 @use "@/styles/variables";
+@use "@/styles/variables" as v;
 @use "@/styles/defaults";
 @use "@/styles/utils";
 @use "@/styles/custom";
@@ -9,8 +10,8 @@
 body {
   // Website defaults
   font-family: "Poppins", sans-serif;
-  background-color: #100429;
-  color: #fff;
+  background-color: v.$color-background;
+  color: v.$color-text;
 }
 
 body {
