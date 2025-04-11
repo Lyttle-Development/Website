@@ -1,4 +1,8 @@
+@use "~@/styles/variables.scss" as v;
+
 .planetsVisual {
+  display: none;
+
   position: relative;
   flex-shrink: 0;
   z-index: -2;
@@ -33,7 +37,7 @@
     max-width: 4rem;
   }
 
-  @media (max-width: 80rem) {
-    display: none;
+  @media (min-width: v.$breakpoint-desktop) {
+    display: block;
   }
 }

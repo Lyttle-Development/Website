@@ -40,4 +40,5 @@ export const breakpoints = {
   extraLarge: variables.breakpoint_extra_large,
   '2-extra-large': variables.breakpoint_2_extra_large,
   '3-extra-large': variables.breakpoint_3_extra_large,
+  desktop: variables.breakpoint_desktop,
 } as const
