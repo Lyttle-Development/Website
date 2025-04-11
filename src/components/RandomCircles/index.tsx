@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react'
 import styles from './index.module.scss'
 import classNames from 'classnames'
 import RandomSeed from 'random-seed'
+import { colors as scssColors } from '@/styles/variables'
 
-const colors = ['#6C63FF', '#AAA9B5']
+const colors = [scssColors.primary, '#AAA9B5']
 
 const OPACITY_MIN = 0.1
 const OPACITY_MAX = 0.2

@@ -1,3 +1,5 @@
+@use "~@/styles/variables.scss" as v;
+
 .bannerTitle {
   display: flex;
   flex-direction: column;
@@ -16,7 +18,7 @@
       top: -6.5rem;
       width: 14rem;
       height: 14rem;
-      background-color: #6C63FF;
+      background-color: v.$color-primary;
       opacity: 0.18;
       border-radius: 50%;
 
