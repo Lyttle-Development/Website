@@ -3,11 +3,24 @@ import type { Block } from 'payload'
 export const BannerTitleConfig: Block = {
   slug: 'bannerTitle',
   interfaceName: 'BannerTitleBlock',
+  labels: {
+    plural: {
+      en: 'Banner Titles',
+      nl: 'Banner Titels',
+    },
+    singular: {
+      en: 'Banner Title',
+      nl: 'Banner Titel',
+    },
+  },
   fields: [
     {
       name: 'headingType',
       type: 'select',
-      label: 'Heading Type',
+      label: {
+        en: 'Heading Type',
+        nl: 'Koptekst Type',
+      },
       options: [
         { label: 'Heading 1', value: 'h1' },
         { label: 'Heading 2', value: 'h2' },
@@ -22,12 +35,19 @@ export const BannerTitleConfig: Block = {
       name: 'title',
       type: 'text',
       required: true,
-      label: 'Title',
+      localized: true,
+      label: {
+        en: 'Title',
+        nl: 'Titel',
+      },
     },
     {
       name: 'reverseAlign',
       type: 'checkbox',
-      label: 'Reverse Alignment',
+      label: {
+        en: 'Reverse Align',
+        nl: 'Omgekeerde Uitlijning',
+      },
       defaultValue: true,
     },
   ],
