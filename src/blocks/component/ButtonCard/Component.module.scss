@@ -1,3 +1,5 @@
+@use "~@/styles/variables.scss" as v;
+
 .buttonCard {
   display: flex;
   flex-direction: column;
@@ -13,11 +15,11 @@
     font-style: italic;
 
     &.blue {
-      color: #6C63FF;
+      color: v.$color-primary;
     }
 
     &.orange {
-      color: #FF6363;
+      color: v.$color-secondary;
     }
   }
 
