@@ -3,11 +3,24 @@ import type { Block } from 'payload'
 export const ColorfulTitleConfig: Block = {
   slug: 'colorfulTitle',
   interfaceName: 'ColorfulTitleBlock',
+  labels: {
+    plural: {
+      en: 'Colorful Titles',
+      nl: 'Kleurrijke Titels',
+    },
+    singular: {
+      en: 'Colorful Title',
+      nl: 'Kleurrijke Titel',
+    },
+  },
   fields: [
     {
       name: 'headingType',
       type: 'select',
-      label: 'Heading Type',
+      label: {
+        en: 'Heading Type',
+        nl: 'Koptekst Type',
+      },
       options: [
         { label: 'Heading 1', value: 'h1' },
         { label: 'Heading 2', value: 'h2' },
@@ -21,19 +34,30 @@ export const ColorfulTitleConfig: Block = {
     {
       name: 'title',
       type: 'text',
+      localized: true,
       required: true,
-      label: 'Title',
+      label: {
+        en: 'Title',
+        nl: 'Titel',
+      },
     },
     {
       name: 'colorTitle',
       type: 'text',
+      localized: true,
       required: true,
-      label: 'Color Title',
+      label: {
+        en: 'Color Title',
+        nl: 'Kleur Titel',
+      },
     },
     {
       name: 'color',
       type: 'select',
-      label: 'Color',
+      label: {
+        en: 'Color',
+        nl: 'Kleur',
+      },
       required: true,
       options: [
         { label: 'Blue', value: 'blue' },
@@ -44,7 +68,10 @@ export const ColorfulTitleConfig: Block = {
     {
       name: 'colorPadding',
       type: 'select',
-      label: 'Add Padding to Color Title',
+      label: {
+        en: 'Color Padding',
+        nl: 'Kleur Opvulling',
+      },
       required: true,
       options: [
         { label: 'None', value: 'none' },
@@ -58,13 +85,19 @@ export const ColorfulTitleConfig: Block = {
     {
       name: 'reverseAlign',
       type: 'checkbox',
-      label: 'Reverse Alignment',
+      label: {
+        en: 'Reverse Align',
+        nl: 'Omgekeerde Uitlijning',
+      },
       defaultValue: true,
     },
     {
       name: 'reverseColor',
       type: 'checkbox',
-      label: 'Reverse Color Order',
+      label: {
+        en: 'Reverse Color',
+        nl: 'Omgekeerde Kleur',
+      },
       defaultValue: false,
     },
   ],

@@ -17,7 +17,8 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
-import { WEBSITE_NAME } from 'constrants'
+import { DEFAULT_LOCALE, SUPPORTED_LANGUAGES, WEBSITE_NAME } from 'constrants'
+import { AcceptedLanguages, SupportedLanguages } from '@payloadcms/translations'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -25,6 +26,21 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   collections: [Pages, Posts, Media, Categories, Users],
   globals: [Header, Footer],
+  i18n: {
+    fallbackLanguage: DEFAULT_LOCALE.code as AcceptedLanguages,
+    supportedLanguages: { ...SUPPORTED_LANGUAGES.map((l) => l.payload) } as SupportedLanguages,
+  },
+  localization: {
+    locales: [
+      ...SUPPORTED_LANGUAGES.map((l) => ({
+        code: l.code,
+        label: l.label,
+        fallbackLocale: DEFAULT_LOCALE.code,
+      })),
+    ],
+    defaultLocale: DEFAULT_LOCALE.code,
+    fallback: true,
+  },
   admin: {
     meta: {
       titleSuffix: '| ' + WEBSITE_NAME,

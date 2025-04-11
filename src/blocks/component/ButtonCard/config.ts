@@ -3,11 +3,24 @@ import type { Block } from 'payload'
 export const ButtonCardConfig: Block = {
   slug: 'buttonCard',
   interfaceName: 'ButtonCardBlock',
+  labels: {
+    plural: {
+      en: 'Button Cards',
+      nl: 'Knopkaarten',
+    },
+    singular: {
+      en: 'Button Card',
+      nl: 'Knopkaart',
+    },
+  },
   fields: [
     {
       name: 'headingType',
       type: 'select',
-      label: 'Heading Type',
+      label: {
+        en: 'Heading Type',
+        nl: 'Koptekst Type',
+      },
       options: [
         { label: 'Heading 1', value: 'h1' },
         { label: 'Heading 2', value: 'h2' },
@@ -21,25 +34,40 @@ export const ButtonCardConfig: Block = {
     {
       name: 'title',
       type: 'text',
+      localized: true,
       required: true,
-      label: 'Title',
+      label: {
+        en: 'Title',
+        nl: 'Titel',
+      },
     },
     {
       name: 'text',
       type: 'text',
+      localized: true,
       required: true,
-      label: 'Text',
+      label: {
+        en: 'Text',
+        nl: 'Tekst',
+      },
     },
     {
       name: 'buttonText',
       type: 'text',
+      localized: true,
       required: true,
-      label: 'Button Text',
+      label: {
+        en: 'Button Text',
+        nl: 'Knoptekst',
+      },
     },
     {
       name: 'color',
       type: 'select',
-      label: 'Color',
+      label: {
+        en: 'Color',
+        nl: 'Kleur',
+      },
       required: true,
       options: [
         { label: 'Blue', value: 'blue' },

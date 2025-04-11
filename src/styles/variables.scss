@@ -13,13 +13,13 @@ $color-secondary: #FF6363;
 $color-secondaryGradient: linear-gradient(90deg, #E1575C 0%, #4B1B37 100%);
 
 $colors: (
-  "background": $color-background,
-  "background-accent": $color-backgroundAccent,
-  "text": $color-text,
-  "primary": $color-primary,
-  "primary-gradient": $color-primaryGradient,
-  "secondary": $color-secondary,
-  "secondary-gradient": $color-secondaryGradient,
+        "background": $color-background,
+        "background-accent": $color-backgroundAccent,
+        "text": $color-text,
+        "primary": $color-primary,
+        "primary-gradient": $color-primaryGradient,
+        "secondary": $color-secondary,
+        "secondary-gradient": $color-secondaryGradient,
 );
 
 
@@ -34,14 +34,14 @@ $font-size-2-extra-large: 1.5rem; // 24px
 $font-size-3-extra-large: 1.75rem; // 28px
 
 $fonts: (
-  "2-extra-small": $font-size-2-extra-small,
-  "extra-small": $font-size-extra-small,
-  "small": $font-size-small,
-  "base": $font-size-base,
-  "large": $font-size-large,
-  "extra-large": $font-size-extra-large,
-  "2-extra-large": $font-size-2-extra-large,
-  "3-extra-large": $font-size-3-extra-large,
+        "2-extra-small": $font-size-2-extra-small,
+        "extra-small": $font-size-extra-small,
+        "small": $font-size-small,
+        "base": $font-size-base,
+        "large": $font-size-large,
+        "extra-large": $font-size-extra-large,
+        "2-extra-large": $font-size-2-extra-large,
+        "3-extra-large": $font-size-3-extra-large,
 );
 
 
@@ -57,15 +57,15 @@ $font-weight-extra-bold: 800;
 $font-weight-black: 900;
 
 $font-weights: (
-  "lightest": $font-weight-lightest,
-  "extra-light": $font-weight-extra-light,
-  "light": $font-weight-light,
-  "normal": $font-weight-normal,
-  "medium": $font-weight-medium,
-  "semi-bold": $font-weight-semi-bold,
-  "bold": $font-weight-bold,
-  "extra-bold": $font-weight-extra-bold,
-  "black": $font-weight-black,
+        "lightest": $font-weight-lightest,
+        "extra-light": $font-weight-extra-light,
+        "light": $font-weight-light,
+        "normal": $font-weight-normal,
+        "medium": $font-weight-medium,
+        "semi-bold": $font-weight-semi-bold,
+        "bold": $font-weight-bold,
+        "extra-bold": $font-weight-extra-bold,
+        "black": $font-weight-black,
 );
 
 
@@ -77,13 +77,15 @@ $breakpoint-extra-large: 80rem; // 1280px
 $breakpoint-2-extra-large: 96rem; // 1536px
 $breakpoint-3-extra-large: 128rem; // 1920px
 
+$breakpoint-desktop: $breakpoint-large;
+
 $breakpoints: (
-  "small": $breakpoint-small,
-  "medium": $breakpoint-medium,
-  "large": $breakpoint-large,
-  "extra-large": $breakpoint-extra-large,
-  "2-extra-large": $breakpoint-2-extra-large,
-  "3-extra-large": $breakpoint-3-extra-large,
+        "small": $breakpoint-small,
+        "medium": $breakpoint-medium,
+        "large": $breakpoint-large,
+        "extra-large": $breakpoint-extra-large,
+        "2-extra-large": $breakpoint-2-extra-large,
+        "3-extra-large": $breakpoint-3-extra-large,
 );
 
 
