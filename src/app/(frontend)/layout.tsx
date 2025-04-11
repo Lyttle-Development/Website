@@ -54,6 +54,19 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           src="https://cloud.umami.is/script.js"
           data-website-id={process.env.UMAMI_WEBSITE_ID}
         />
+        <noscript>
+          <style>
+            {`
+            :root {
+              --loading-start-opacity: 1;
+            }
+
+            body {
+              transition: none;
+            }
+            `}
+          </style>
+        </noscript>
       </head>
       <body className="loading">
         <SvgSpriteSheet />
