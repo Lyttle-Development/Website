@@ -1,0 +1,12 @@
+@use "../variables.scss";
+@use "./stringext.scss";
+@use "sass:map";
+
+:export {
+  @each $name, $value in variables.$colors {
+    $snake-case-name: stringext.replace($name, "-", "_");
+    #{"col_" + $snake-case-name}: #{$value};
+  }
+
+  bp_mobile: variables.$breakpoint-medium;
+}

@@ -1,0 +1,33 @@
+@use "variables" as v;
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: v.$breakpoint-small) { // Small Devices (640px)
+    max-width: v.$breakpoint-small;
+  }
+
+  @media (min-width: v.$breakpoint-medium) { // Medium Devices (768px)
+    max-width: v.$breakpoint-medium;
+  }
+
+  @media (min-width: v.$breakpoint-large) { // Large Devices (1024px)
+    max-width: v.$breakpoint-large;
+  }
+
+  @media (min-width: v.$breakpoint-extra-large) { // Extra Large Devices (1280px)
+    max-width: v.$breakpoint-extra-large;
+  }
+
+  @media (min-width: v.$breakpoint-2-extra-large) { // 2x Extra Large Devices (1536px)
+    max-width: v.$breakpoint-2-extra-large;
+  }
+
+  @media (min-width: v.$breakpoint-3-extra-large) { // 3x Extra Large Devices (1920px)
+    max-width: v.$breakpoint-3-extra-large;
+  }
+}

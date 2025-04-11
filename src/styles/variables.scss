@@ -1,0 +1,56 @@
+@use "sass:map";
+
+// Colors
+$color-background: #100429;
+$color-backgroundAccent: #252257;
+
+$color-text: #F2F2F2;
+
+$color-primary: #6C63FF;
+$color-primaryGradient: linear-gradient(90deg, #6C62FF 0%, #271B5E 100%);
+$color-secondary: #FF6363;
+$color-secondaryGradient: linear-gradient(90deg, #E1575C 0%, #4B1B37 100%);
+
+$colors: (
+  "background": $color-background,
+  "background-accent": $color-backgroundAccent,
+  "text": $color-text,
+  "primary": $color-primary,
+  "primary-gradient": $color-primaryGradient,
+  "secondary": $color-secondary,
+  "secondary-gradient": $color-secondaryGradient,
+);
+
+
+// Font sizes
+$font-size-2-extra-small: 0.625rem; // 10px
+$font-size-extra-small: 0.75rem; // 12px
+$font-size-small: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-large: 1.125rem; // 18px
+$font-size-extra-large: 1.25rem; // 20px
+$font-size-2-extra-large: 1.5rem; // 24px
+$font-size-3-extra-large: 1.75rem; // 28px
+
+
+// Font weights
+$font-weight-lightest: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
+
+
+// Breakpoints
+$breakpoint-small: 40rem; // 640px
+$breakpoint-medium: 48rem; // 768px
+$breakpoint-large: 64rem; // 1024px
+$breakpoint-extra-large: 80rem; // 1280px
+$breakpoint-2-extra-large: 96rem; // 1536px
+$breakpoint-3-extra-large: 128rem; // 1920px
+
+

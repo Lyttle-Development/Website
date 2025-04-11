@@ -1,0 +1,27 @@
+@use "@/styles/reset";
+@use "@/styles/variables";
+@use "@/styles/defaults";
+@use "@/styles/utils";
+@use "@/styles/custom";
+
+@use "sass:meta";
+
+body {
+  // Website defaults
+  font-family: "Poppins", sans-serif;
+  background-color: #100429;
+  color: #fff;
+}
+
+body {
+  // Loading intro
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+
+  // Prevent scrollbar from appearing for horizontal overflow
+  overflow-x: clip;
+
+  &.loading {
+    opacity: 0;
+  }
+}
