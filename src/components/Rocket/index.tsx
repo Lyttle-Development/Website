@@ -34,7 +34,7 @@ export const Rocket: React.FC = () => {
     rocketRef.current!.style.top = `calc(${point.y * 100}%)`
     rocketRef.current!.style.left = `calc(${point.x * 100}%)`
 
-    const shouldFlip = Math.abs(angle / (Math.PI * 2)) * 360 > 90
+    const shouldFlip = angle > Math.PI / 2 || angle < -Math.PI / 2
     rocketRef.current!.style.transform = `rotate(${angle}rad) scaleY(${shouldFlip ? -1 : 1}) scaleX(${goingUp ? -1 : 1})`
   }
 
