@@ -1,5 +1,4 @@
 'use client'
-import { cn } from '@/utilities/ui'
 import useClickableCard from '@/utilities/useClickableCard'
 import Link from 'next/link'
 import React, { Fragment } from 'react'
@@ -7,6 +6,7 @@ import React, { Fragment } from 'react'
 import type { Post } from '@/payload-types'
 
 import { Media } from '@/components/Media'
+import classNames from 'classnames'
 
 export type CardPostData = Pick<Post, 'slug' | 'categories' | 'meta' | 'title'>
 
@@ -31,7 +31,7 @@ export const Card: React.FC<{
 
   return (
     <article
-      className={cn(
+      className={classNames(
         'border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer',
         className,
       )}

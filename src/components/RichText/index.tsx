@@ -18,7 +18,7 @@ import type {
   MediaBlock as MediaBlockProps,
 } from '@/payload-types'
 import { BannerBlock } from '@/blocks/build-in/Banner/Component'
-import { cn } from '@/utilities/ui'
+import classNames from 'classnames'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -63,7 +63,7 @@ export default function RichText(props: Props) {
   return (
     <ConvertRichText
       converters={jsxConverters}
-      className={cn(
+      className={classNames(
         'payload-richtext',
         {
           container: enableGutter,

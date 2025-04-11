@@ -56,13 +56,10 @@
     "react-hook-form": "^7.54.2",
     "sass": "^1.86.3",
     "sharp": "^0.32.6",
-    "styled-components": "^6.1.17",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
+    "styled-components": "^6.1.17"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@tailwindcss/typography": "^0.5.16",
     "@types/escape-html": "^1.0.4",
     "@types/node": "^22.13.13",
     "@types/random-seed": "^0.3.5",
@@ -74,7 +71,6 @@
     "eslint-config-next": "^15.2.4",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
-    "tailwindcss": "^3.4.17",
     "typescript": "^5.8.2"
   },
   "packageManager": "npm@10.3.0",

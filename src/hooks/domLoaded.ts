@@ -6,12 +6,12 @@ export function useDomLoaded() {
   useEffect(() => {
     const handleDomContentLoaded = () => {
       setDomLoaded(true)
-      document.body.classList.add('loaded')
+      document.body.classList.remove('loading')
     }
 
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
       setDomLoaded(true)
-      document.body.classList.add('loaded')
+      document.body.classList.remove('loading')
     } else {
       document.addEventListener('DOMContentLoaded', handleDomContentLoaded)
     }

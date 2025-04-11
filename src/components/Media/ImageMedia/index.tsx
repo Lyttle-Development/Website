@@ -1,8 +1,6 @@
 'use client'
 
 import type { StaticImageData } from 'next/image'
-
-import { cn } from '@/utilities/ui'
 import NextImage from 'next/image'
 import React from 'react'
 
@@ -10,6 +8,7 @@ import type { Props as MediaProps } from '../types'
 
 import { cssVariables } from '@/cssVariables'
 import { getClientSideURL } from '@/utilities/getURL'
+import classNames from 'classnames'
 
 const { breakpoints } = cssVariables
 
@@ -59,7 +58,7 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     <picture>
       <NextImage
         alt={alt || ''}
-        className={cn(imgClassName)}
+        className={classNames(imgClassName)}
         fill={fill}
         height={!fill ? height : undefined}
         placeholder="blur"

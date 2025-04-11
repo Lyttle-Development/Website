@@ -1,5 +1,5 @@
-import { cn } from '@/utilities/ui'
 import * as React from 'react'
+import classNames from 'classnames'
 
 const Textarea: React.FC<
   {
@@ -8,7 +8,7 @@ const Textarea: React.FC<
 > = ({ className, ref, ...props }) => {
   return (
     <textarea
-      className={cn(
+      className={classNames(
         'flex min-h-[80px] w-full rounded border border-border bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
         className,
       )}

@@ -1,12 +1,11 @@
 import type { StaticImageData } from 'next/image'
-
-import { cn } from '@/utilities/ui'
 import React from 'react'
 import RichText from '@/components/RichText'
 
 import type { MediaBlock as MediaBlockProps } from '@/payload-types'
 
 import { Media } from '../../../components/Media'
+import classNames from 'classnames'
 
 type Props = MediaBlockProps & {
   breakout?: boolean
@@ -34,7 +33,7 @@ export const MediaBlock: React.FC<Props> = (props) => {
 
   return (
     <div
-      className={cn(
+      className={classNames(
         '',
         {
           container: enableGutter,
@@ -44,14 +43,14 @@ export const MediaBlock: React.FC<Props> = (props) => {
     >
       {(media || staticImage) && (
         <Media
-          imgClassName={cn('border border-border rounded-[0.8rem]', imgClassName)}
+          imgClassName={classNames('border border-border rounded-[0.8rem]', imgClassName)}
           resource={media}
           src={staticImage}
         />
       )}
       {caption && (
         <div
-          className={cn(
+          className={classNames(
             'mt-6',
             {
               container: !disableInnerContainer,
