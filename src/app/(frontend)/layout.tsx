@@ -56,7 +56,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           data-website-id={process.env.UMAMI_WEBSITE_ID}
         />
       </head>
-      <body>
+      <body className="loading">
         <SvgSpriteSheet />
         <Providers>
           <AdminBar
