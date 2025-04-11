@@ -1,0 +1,24 @@
+.footer {
+  padding-top: 15rem;
+  width: 100vw;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -18rem;
+
+    > article {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .banner {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+}

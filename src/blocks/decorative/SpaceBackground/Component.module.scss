@@ -1,0 +1,32 @@
+.spaceBackground {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 60rem;
+  max-height: 95vh;
+}
+
+.backgroundBanner {
+  position: absolute;
+  z-index: -3;
+  top: 0;
+  width: 100vw;
+  height: 60rem;
+  max-height: 95vh;
+
+  @media (max-width: 80rem) {
+    height: 50vh;
+  }
+}
+
+.rocket {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}

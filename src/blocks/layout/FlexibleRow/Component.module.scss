@@ -1,0 +1,11 @@
+.flexibleRow {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-around;
+
+  @media (max-width: 80rem) {
+    flex-wrap: wrap;
+  }
+}
