@@ -1,0 +1,26 @@
+@use "../variables.scss" as v;
+@use "./stringext.scss" as stringext;
+
+@use "sass:map";
+
+:export {
+  @each $name, $value in v.$colors {
+    $snake-case-name: stringext.replace($name, "-", "_");
+    #{"color_" + $snake-case-name}: #{$value};
+  }
+
+  @each $name, $value in v.$fonts {
+    $snake-case-name: stringext.replace($name, "-", "_");
+    #{"font_" + $snake-case-name}: #{$value};
+  }
+
+  @each $name, $value in v.$font-weights {
+    $snake-case-name: stringext.replace($name, "-", "_");
+    #{"font_weight_" + $snake-case-name}: #{$value};
+  }
+
+  @each $name, $value in v.$breakpoints {
+    $snake-case-name: stringext.replace($name, "-", "_");
+    #{"breakpoint_" + $snake-case-name}: #{$value};
+  }
+}

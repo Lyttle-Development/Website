@@ -1,0 +1,42 @@
+/* v1.0.2
+Lyttle Defaults ~ Recommended to use with Lyttle Reset:
+https://github.com/Stualyttle/LyttleTools/blob/main/CSS/reset.css
+*/
+
+@use './variables' as v;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* word-wrap: break-word; */
+}
+
+body {
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: v.$color-background;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: v.$color-backgroundAccent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+input:focus,
+textarea:focus {
+  outline: v.$color-primary solid .2rem;
+}

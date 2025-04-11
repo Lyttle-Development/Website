@@ -1,0 +1,33 @@
+.colorfulTitle {
+  display: inline-flex;
+  flex-direction: column;
+  width: fit-content;
+  font-size: 2rem;
+
+  &.reverseColor {
+    flex-direction: column-reverse;
+  }
+
+  &.reverseAlign {
+    align-items: flex-end;
+  }
+
+  .color {
+    font-family: "DM Serif Display", serif;
+    font-style: italic;
+  }
+
+  @media (min-width: 80rem) {
+    &.colorPaddingLight {
+      padding: 0 3rem;
+    }
+
+    &.colorPaddingMedium {
+      padding: 0 6rem;
+    }
+
+    &.colorPaddingLarge {
+      padding: 0 9rem;
+    }
+  }
+}

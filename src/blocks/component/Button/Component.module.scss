@@ -1,0 +1,19 @@
+@use "~@/styles/variables.scss" as v;
+
+.button {
+  display: inline-flex;
+  padding: 1rem 3em;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 1.875rem;
+  width: fit-content;
+
+  &.blue {
+    background: v.$color-primaryGradient;
+  }
+
+  &.orange {
+    background: v.$color-secondaryGradient;
+  }
+}

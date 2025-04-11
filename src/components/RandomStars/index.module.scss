@@ -1,0 +1,26 @@
+.stars {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.star {
+  position: absolute;
+  width: 30px; // Adjust the size as needed
+  height: 30px; // Adjust the size as needed
+  pointer-events: none;
+  animation: moveStar 5s infinite ease-in-out;
+}
+
+@keyframes moveStar {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(var(--translate-x), var(--translate-y)) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}

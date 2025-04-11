@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "variables" as v;
+
+@mixin display-flex($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+@mixin center-flex {
+  justify-content: center;
+  align-items: center;
+}
+
+@function color($key, $opacity: 1) {
+  @if map.has-key(v.$colors, $key) {
+    @return rgba(map.get(v.$colors, $key), $opacity);
+  }
+
+  @error "Color key `#{$key}` not found in `$colors` map.";
+}
