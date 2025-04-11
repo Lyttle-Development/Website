@@ -1,3 +1,5 @@
+@use "~@/styles/variables.scss" as v;
+
 .flexibleRow {
   display: flex;
   flex-direction: row;
@@ -11,8 +13,12 @@
   }
 }
 
-@media (max-width: 80rem) {
+.hideOnMobile {
+  display: none;
+}
+
+@media (min-width: v.$breakpoint-desktop) {
   .hideOnMobile {
-    display: none;
+    display: flex;
   }
 }
