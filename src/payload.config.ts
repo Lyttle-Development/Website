@@ -91,7 +91,7 @@ export default buildConfig({
       ssl: {
         rejectUnauthorized: false,
       },
-      max: 5, // maximum number of clients in the pool
+      max: 1, // maximum number of clients in the pool
     },
   }),
   cors: [getServerSideURL()].filter(Boolean),
