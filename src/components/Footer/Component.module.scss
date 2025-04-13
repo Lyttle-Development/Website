@@ -6,10 +6,6 @@
 
   .content {
     display: none;
-
-    @media (min-width: v.$breakpoint-desktop) {
-      display: flex;
-    }
     justify-content: space-between;
     align-items: center;
     margin-bottom: -18rem;
@@ -19,6 +15,12 @@
     > article {
       display: flex;
       flex-direction: column;
+    }
+
+    & {
+      @media (min-width: v.$breakpoint-desktop) {
+        display: flex;
+      }
     }
   }
 
