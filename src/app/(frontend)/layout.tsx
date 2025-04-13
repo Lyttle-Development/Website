@@ -48,12 +48,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {/* Safari/WebKit Auto Dark Mode */}
         <meta name="color-scheme" content="light only" />
 
-        {/* Add umami */}
-        <script
-          defer
-          src="https://umami.app.lyttle.dev/script.js"
-          data-website-id={process.env.UMAMI_WEBSITE_ID}
-        />
+        {
+          // Add Umami (only if the environment variable is set)
+          process.env.UMAMI_WEBSITE_ID && (
+            <script
+              defer
+              src="https://umami.app.lyttle.dev/script.js"
+              data-website-id={process.env.UMAMI_WEBSITE_ID}
+            />
+          )
+        }
+        
         <noscript>
           <style>
             {`
