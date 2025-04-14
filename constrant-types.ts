@@ -1,4 +1,4 @@
-import type { Language } from '@payloadcms/translations'
+import type { AcceptedLanguages, Language } from '@payloadcms/translations'
 
 export interface ModuleEnabled {
   pages: boolean
@@ -9,7 +9,7 @@ export interface ModuleEnabled {
 }
 
 export interface SupportedLanguage {
-  code: string
+  code: AcceptedLanguages
   label: string
   payload: Language
 }
