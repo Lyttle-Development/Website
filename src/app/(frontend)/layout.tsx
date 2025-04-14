@@ -22,7 +22,6 @@ import '@fontsource/dm-serif-display/400-italic.css' // Specify weight and style
 import '@/styles/global.scss'
 
 import { getServerSideURL } from '@/utilities/getURL'
-import { SvgSpriteSheet } from '@/svg/SvgSpriteSheet'
 import classNames from 'classnames'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -58,7 +57,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             />
           )
         }
-        
+
         <noscript>
           <style>
             {`
@@ -74,7 +73,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </noscript>
       </head>
       <body className="loading">
-        <SvgSpriteSheet />
         <Providers>
           <AdminBar
             adminBarProps={{

@@ -10,7 +10,7 @@ export const Users: CollectionConfig = {
     admin: authenticated,
     create: (args) => collectionEnabled(MODULE_ENABLED.users, authenticated, args),
     delete: (args) => collectionEnabled(MODULE_ENABLED.users, authenticated, args),
-    read: (args) => collectionEnabled(MODULE_ENABLED.users, authenticated, args),
+    read: authenticated,
     update: (args) => collectionEnabled(MODULE_ENABLED.users, authenticated, args),
   },
   admin: {

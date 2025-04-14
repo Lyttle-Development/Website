@@ -34,7 +34,7 @@ export const Posts: CollectionConfig<'posts'> = {
   access: {
     create: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticated, args),
     delete: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticated, args),
-    read: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticatedOrPublished, args),
+    read: authenticatedOrPublished,
     update: (args) => collectionEnabled(MODULE_ENABLED.posts, authenticated, args),
   },
   // This config controls what's populated by default when a post is referenced
