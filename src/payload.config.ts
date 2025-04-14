@@ -46,6 +46,9 @@ export default buildConfig({
     fallback: true,
   },
   admin: {
+    avatar: {
+      Component: '@/components/ProfilePicture',
+    },
     meta: {
       titleSuffix: '| ' + WEBSITE_NAME,
       icons: {
@@ -56,9 +59,10 @@ export default buildConfig({
       beforeLogin: [],
       beforeDashboard: [],
       graphics: {
-        Logo: '@/graphics/Logo',
-        Icon: '@/graphics/Favicon',
+        Logo: '@/components/Logo/PropLess',
+        Icon: '@/components/Favicon',
       },
+      Nav: '@/components/DashboardNavigation',
     },
     importMap: {
       baseDir: path.resolve(dirname),

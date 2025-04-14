@@ -24,7 +24,7 @@ export const Pages: CollectionConfig<'pages'> = {
   access: {
     create: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticated, args),
     delete: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticated, args),
-    read: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticatedOrPublished, args),
+    read: authenticatedOrPublished,
     update: (args) => collectionEnabled(MODULE_ENABLED.pages, authenticated, args),
   },
   // This config controls what's populated by default when a page is referenced
