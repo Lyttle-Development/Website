@@ -22,7 +22,7 @@ import { ReindexButton as ReindexButton_aead06e4cbf6b2620c5c51c9ab283634 } from 
 import { RowLabel as RowLabel_32a51e6e3af330e56588397e714b8f89 } from '@/components/Header/RowLabel'
 import { RowLabel as RowLabel_60b5df3cbc6a1ff1b7020e4512a8a1e3 } from '@/components/Footer/RowLabel'
 import { default as default_6267fbbde5d54e0165872a9485357320 } from '@/components/ProfilePicture'
-import { default as default_e7c361d6b07a87ff325cccef719ad713 } from '@/components/DashboardNavigation'
+import { default as default_2944c5e5ca43dc5aa5bd571f7bbd7caa } from '@/../libs/payload-defaults/src/components/Navigation'
 import { default as default_cf95cccfe8c80dcd732ba77db2ae871a } from '@/components/Favicon'
 import { default as default_553f66a340acdf813964720f1c7400b8 } from '@/components/Logo/PropLess'
 import { UploadthingClientUploadHandler as UploadthingClientUploadHandler_749dcaa11bb61b873d113cb6c609bc10 } from '@payloadcms/storage-uploadthing/client'
@@ -52,7 +52,7 @@ export const importMap = {
   "@/components/Header/RowLabel#RowLabel": RowLabel_32a51e6e3af330e56588397e714b8f89,
   "@/components/Footer/RowLabel#RowLabel": RowLabel_60b5df3cbc6a1ff1b7020e4512a8a1e3,
   "@/components/ProfilePicture#default": default_6267fbbde5d54e0165872a9485357320,
-  "@/components/DashboardNavigation#default": default_e7c361d6b07a87ff325cccef719ad713,
+  "@/../libs/payload-defaults/src/components/Navigation#default": default_2944c5e5ca43dc5aa5bd571f7bbd7caa,
   "@/components/Favicon#default": default_cf95cccfe8c80dcd732ba77db2ae871a,
   "@/components/Logo/PropLess#default": default_553f66a340acdf813964720f1c7400b8,
   "@payloadcms/storage-uploadthing/client#UploadthingClientUploadHandler": UploadthingClientUploadHandler_749dcaa11bb61b873d113cb6c609bc10

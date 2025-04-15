@@ -38,6 +38,12 @@
       ],
       "@/*": [
         "./src/*"
+      ],
+      "@payload-defaults": [
+        "./libs/payload-defaults/src/index.ts"
+      ],
+      "@payload-defaults/*": [
+        "./libs/payload-defaults/src/*"
       ]
     }
   },

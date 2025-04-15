@@ -16,7 +16,7 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { collectionEnabled } from '@/utilities/collectionEnabled'
-import { MODULE_ENABLED } from '../../../constrants'
+import { MODULE_ENABLED } from '../../../constants'
 import { exposedBlocks } from '@/blocks/RenderBlocks'
 
 export const Pages: CollectionConfig<'pages'> = {

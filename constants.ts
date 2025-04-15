@@ -1,4 +1,8 @@
-import { GlobalEnabled, ModuleEnabled, SupportedLanguage } from './constrant-types'
+import {
+  GlobalEnabled,
+  ModuleEnabled,
+  SupportedLanguage,
+} from './constants-types'
 import { en } from '@payloadcms/translations/languages/en'
 import { nl } from '@payloadcms/translations/languages/nl'
 

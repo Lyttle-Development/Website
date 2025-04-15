@@ -11,7 +11,7 @@ import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
-import { DEFAULT_LOCALE, SUPPORTED_LANGUAGES } from '../../../../constrants'
+import { DEFAULT_LOCALE, SUPPORTED_LANGUAGES } from '../../../../constants'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -39,7 +39,11 @@ export async function generateStaticParams() {
 }
 
 const queryPageBySlug = cache(
-  async ({ slug, locale, draft }: { slug: string; locale?: string; draft?: boolean }) => {
+  async ({ slug, locale, draft }: {
+    slug: string;
+    locale?: string;
+    draft?: boolean
+  }) => {
     const payload = await getPayload({ config: configPromise })
 
     const result = await payload.find({

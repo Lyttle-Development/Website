@@ -17,14 +17,42 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
-import { DEFAULT_LOCALE, SUPPORTED_LANGUAGES, WEBSITE_NAME } from 'constrants'
+import * as constants from '../constants'
+import { defaultConfig } from '@payload-defaults'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+const { DEFAULT_LOCALE, SUPPORTED_LANGUAGES, WEBSITE_NAME } = constants
 
 export default buildConfig({
-  collections: [Pages, Posts, Media, Categories, Users],
   globals: [Header, Footer],
+  admin: {
+    ...defaultConfig.admin,
+    avatar: {
+      Component: '@/components/ProfilePicture',
+    },
+    meta: {
+      titleSuffix: '| ' + WEBSITE_NAME,
+      icons: {
+        icon: '/favicon.ico',
+      },
+    },
+    components: {
+      ...defaultConfig.admin?.components,
+      graphics: {
+        Logo: '@/components/Logo/PropLess',
+        Icon: '@/components/Favicon',
+      },
+    },
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
+    user: Users.slug,
+  },
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////// DO NOT CHANGE ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING ///////////
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  collections: [Pages, Posts, Media, Categories, Users],
   i18n: {
     fallbackLanguage: DEFAULT_LOCALE.code,
     supportedLanguages: SUPPORTED_LANGUAGES.reduce((prev, curr) => {
@@ -44,52 +72,6 @@ export default buildConfig({
     ],
     defaultLocale: DEFAULT_LOCALE.code,
     fallback: true,
-  },
-  admin: {
-    avatar: {
-      Component: '@/components/ProfilePicture',
-    },
-    meta: {
-      titleSuffix: '| ' + WEBSITE_NAME,
-      icons: {
-        icon: '/favicon.ico',
-      },
-    },
-    components: {
-      beforeLogin: [],
-      beforeDashboard: [],
-      graphics: {
-        Logo: '@/components/Logo/PropLess',
-        Icon: '@/components/Favicon',
-      },
-      Nav: '@/components/DashboardNavigation',
-    },
-    importMap: {
-      baseDir: path.resolve(dirname),
-    },
-    user: Users.slug,
-    livePreview: {
-      breakpoints: [
-        {
-          label: 'Mobile',
-          name: 'mobile',
-          width: 375,
-          height: 667,
-        },
-        {
-          label: 'Tablet',
-          name: 'tablet',
-          width: 768,
-          height: 1024,
-        },
-        {
-          label: 'Desktop',
-          name: 'desktop',
-          width: 1440,
-          height: 900,
-        },
-      ],
-    },
   },
   // This config helps us configure global or default features that the other editors can inherit
   editor: defaultLexical,
@@ -130,17 +112,17 @@ export default buildConfig({
     process.env.SMTP_USER &&
     process.env.SMTP_PASS
       ? nodemailerAdapter({
-          defaultFromAddress: process.env.EMAIL_ADDRESS || '',
-          defaultFromName: process.env.EMAIL_NAME || '',
-          // Nodemailer transportOptions
-          transportOptions: {
-            host: process.env.SMTP_HOST,
-            port: 587,
-            auth: {
-              user: process.env.SMTP_USER,
-              pass: process.env.SMTP_PASS,
-            },
+        defaultFromAddress: process.env.EMAIL_ADDRESS || '',
+        defaultFromName: process.env.EMAIL_NAME || '',
+        // Nodemailer transportOptions
+        transportOptions: {
+          host: process.env.SMTP_HOST,
+          port: 587,
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
           },
-        })
+        },
+      })
       : undefined,
 })

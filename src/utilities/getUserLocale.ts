@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE, SUPPORTED_LANGUAGES } from '../../constrants'
+import { DEFAULT_LOCALE, SUPPORTED_LANGUAGES } from '../../constants'
 
 function hasLocale(languages: string[], language: string): boolean {
   // Check if any of the user's preferred languages start with the specified language.
@@ -18,6 +18,7 @@ export function getUserLocale(): string {
 
     // If a match is found, return it; otherwise, return the first supported language.
     return matchedLocale || DEFAULT_LOCALE.code
-  } catch (_) {}
+  } catch (_) {
+  }
   return DEFAULT_LOCALE.code
 }

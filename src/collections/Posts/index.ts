@@ -27,7 +27,7 @@ import {
 } from '@payloadcms/plugin-seo/fields'
 import { slugField } from '@/fields/slug'
 import { collectionEnabled } from '@/utilities/collectionEnabled'
-import { MODULE_ENABLED } from '../../../constrants'
+import { MODULE_ENABLED } from '../../../constants'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
