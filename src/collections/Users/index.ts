@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 
 import { authenticated } from '@/access/authenticated'
-import { MODULE_ENABLED } from 'constrants'
+import { MODULE_ENABLED } from '../../../constants'
 import { collectionEnabled } from '@/utilities/collectionEnabled'
 
 export const Users: CollectionConfig = {

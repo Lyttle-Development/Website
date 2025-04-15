@@ -4,7 +4,7 @@ import { anyone } from '../access/anyone'
 import { authenticated } from '../access/authenticated'
 import { slugField } from '@/fields/slug'
 import { collectionEnabled } from '@/utilities/collectionEnabled'
-import { MODULE_ENABLED } from 'constrants'
+import { MODULE_ENABLED } from '../../constants'
 
 export const Categories: CollectionConfig = {
   slug: 'categories',

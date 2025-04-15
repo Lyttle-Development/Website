@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getServerSideURL } from './getURL'
-import { WEBSITE_NAME } from '../../constrants'
+import { WEBSITE_NAME } from '../../constants'
 
 const defaultOpenGraph: Metadata['openGraph'] = {
   type: 'website',

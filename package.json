@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "build": "bash scripts/update-lib.sh && cross-env NODE_OPTIONS=--no-deprecation next build",
     "postbuild": "next-sitemap --config next-sitemap.config.cjs",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "dev:prod": "cross-env NODE_OPTIONS=--no-deprecation rm -rf .next && npm build && npm start",
@@ -17,7 +17,8 @@
     "reinstall": "cross-env NODE_OPTIONS=--no-deprecation rm -rf node_modules && rm package-lock.json && npm --ignore-workspace install",
     "start": "npm run build && next start -p 3000",
     "docker:setup": "npm run build",
-    "docker:build": "docker build -t lyttledev-website ."
+    "docker:build": "docker build -t lyttledev-website .",
+    "postinstall": "bash scripts/update-lib.sh"
   },
   "dependencies": {
     "@fontsource/dm-serif-display": "^5.2.5",

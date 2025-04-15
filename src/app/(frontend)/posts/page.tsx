@@ -7,7 +7,7 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 import PageClient from './page.client'
-import { WEBSITE_NAME } from '../../../../constrants'
+import { WEBSITE_NAME } from '../../../../constants'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
