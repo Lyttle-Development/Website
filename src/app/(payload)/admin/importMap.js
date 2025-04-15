@@ -26,6 +26,7 @@ import { default as default_2944c5e5ca43dc5aa5bd571f7bbd7caa } from '@/../libs/p
 import { default as default_cf95cccfe8c80dcd732ba77db2ae871a } from '@/components/Favicon'
 import { default as default_553f66a340acdf813964720f1c7400b8 } from '@/components/Logo/PropLess'
 import { UploadthingClientUploadHandler as UploadthingClientUploadHandler_749dcaa11bb61b873d113cb6c609bc10 } from '@payloadcms/storage-uploadthing/client'
+import { default as default_b9ef53fe1ebf18da7c0e56948f2f4f10 } from '@/../libs/payload-defaults/src/components/Dashboard'
 
 export const importMap = {
   "@payloadcms/richtext-lexical/rsc#RscEntryLexicalCell": RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e,
@@ -55,5 +56,6 @@ export const importMap = {
   "@/../libs/payload-defaults/src/components/Navigation#default": default_2944c5e5ca43dc5aa5bd571f7bbd7caa,
   "@/components/Favicon#default": default_cf95cccfe8c80dcd732ba77db2ae871a,
   "@/components/Logo/PropLess#default": default_553f66a340acdf813964720f1c7400b8,
-  "@payloadcms/storage-uploadthing/client#UploadthingClientUploadHandler": UploadthingClientUploadHandler_749dcaa11bb61b873d113cb6c609bc10
+  "@payloadcms/storage-uploadthing/client#UploadthingClientUploadHandler": UploadthingClientUploadHandler_749dcaa11bb61b873d113cb6c609bc10,
+  "@/../libs/payload-defaults/src/components/Dashboard#default": default_b9ef53fe1ebf18da7c0e56948f2f4f10
 }
