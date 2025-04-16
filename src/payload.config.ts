@@ -107,32 +107,31 @@ export default buildConfig({
     tasks: [],
   },
   email:
-    process.env.EMAIL_ADDRESS &&
-    process.env.EMAIL_NAME &&
-    // Check if need to use nodemailer
-    ((process.env.SMTP_HOST &&
-      process.env.SMTP_USER &&
-      process.env.SMTP_PASS)
-      ? nodemailerAdapter({
-        defaultFromAddress: process.env.EMAIL_ADDRESS || '',
-        defaultFromName: process.env.EMAIL_NAME || '',
-        // Nodemailer transportOptions
-        transportOptions: {
-          host: process.env.SMTP_HOST,
-          port: 587,
-          auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
-          },
-        },
-      })
-      // Check if need to use Resend
-      : ((process.env.RESEND_API_KEY)
-        ? resendAdapter({
-          defaultFromAddress: process.env.EMAIL_ADDRESS || '',
-          defaultFromName: process.env.EMAIL_NAME || '',
-          apiKey: process.env.RESEND_API_KEY || '',
-        })
-        // Default to no email adapter
-        : undefined)),
+    (process.env.EMAIL_ADDRESS &&
+      process.env.EMAIL_NAME &&
+      // Check if need to use nodemailer
+      (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS
+        ? nodemailerAdapter({
+            defaultFromAddress: process.env.EMAIL_ADDRESS || '',
+            defaultFromName: process.env.EMAIL_NAME || '',
+            // Nodemailer transportOptions
+            transportOptions: {
+              host: process.env.SMTP_HOST,
+              port: 587,
+              auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
+              },
+            },
+          })
+        : // Check if need to use Resend
+          process.env.RESEND_API_KEY
+          ? resendAdapter({
+              defaultFromAddress: process.env.EMAIL_ADDRESS || '',
+              defaultFromName: process.env.EMAIL_NAME || '',
+              apiKey: process.env.RESEND_API_KEY || '',
+            })
+          : // Default to no email adapter
+            undefined)) ||
+    undefined,
 })
