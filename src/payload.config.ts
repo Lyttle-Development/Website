@@ -17,6 +17,7 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
+import { resendAdapter } from '@payloadcms/email-resend'
 import * as constants from '../constants'
 import { defaultConfig } from '@payload-defaults'
 
@@ -108,9 +109,10 @@ export default buildConfig({
   email:
     process.env.EMAIL_ADDRESS &&
     process.env.EMAIL_NAME &&
-    process.env.SMTP_HOST &&
-    process.env.SMTP_USER &&
-    process.env.SMTP_PASS
+    // Check if need to use nodemailer
+    ((process.env.SMTP_HOST &&
+      process.env.SMTP_USER &&
+      process.env.SMTP_PASS)
       ? nodemailerAdapter({
         defaultFromAddress: process.env.EMAIL_ADDRESS || '',
         defaultFromName: process.env.EMAIL_NAME || '',
@@ -124,5 +126,13 @@ export default buildConfig({
           },
         },
       })
-      : undefined,
+      // Check if need to use Resend
+      : ((process.env.RESEND_API_KEY)
+        ? resendAdapter({
+          defaultFromAddress: process.env.EMAIL_ADDRESS || '',
+          defaultFromName: process.env.EMAIL_NAME || '',
+          apiKey: process.env.RESEND_API_KEY || '',
+        })
+        // Default to no email adapter
+        : undefined)),
 })
