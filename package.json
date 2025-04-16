@@ -23,8 +23,11 @@
   "dependencies": {
     "@fontsource/dm-serif-display": "^5.2.5",
     "@fontsource/poppins": "^5.2.5",
+    "@payload-enchants/better-localized-fields": "^1.2.2",
+    "@payload-enchants/docs-reorder": "^1.2.2",
     "@payloadcms/admin-bar": "latest",
     "@payloadcms/db-postgres": "latest",
+    "@payloadcms/email-resend": "^3.34.0",
     "@payloadcms/live-preview-react": "latest",
     "@payloadcms/next": "latest",
     "@payloadcms/payload-cloud": "latest",
