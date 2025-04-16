@@ -76,7 +76,10 @@
   },
   "packageManager": "npm@10.3.0",
   "engines": {
-    "node": "^18.20.2 || >=20.9.0"
+    "node": "22.11.0"
+  },
+  "volta": {
+    "node": "22.11.0"
   },
   "npm": {
     "onlyBuiltDependencies": [
