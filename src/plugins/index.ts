@@ -20,12 +20,6 @@ import { getServerSideURL } from '@/utilities/getURL'
 import { uploadthingStorage } from '@payloadcms/storage-uploadthing'
 import { WEBSITE_NAME } from '../../constants'
 
-// Custom plugins:
-import {
-  betterLocalizedFields,
-} from '@payload-enchants/better-localized-fields'
-import { docsReorder } from '@payload-enchants/docs-reorder'
-
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title ? `${doc.title} | ${WEBSITE_NAME}` : WEBSITE_NAME
 }
@@ -37,13 +31,6 @@ const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
 }
 
 export const plugins: Plugin[] = [
-  // Custom plugins
-  betterLocalizedFields(),
-  docsReorder({
-    collections: ['pages'].map((slug) => ({ slug })),
-  }),
-
-  // Default plugins
   redirectsPlugin({
     collections: ['pages', 'posts'],
     overrides: {
