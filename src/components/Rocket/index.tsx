@@ -135,6 +135,8 @@ export const Rocket: React.FC = () => {
     str += `${w} ${h} `
   }
 
+  const heightToRemove = 20 * 16
+
   return (
     <>
       <div className={styles.positioner}>
@@ -142,7 +144,7 @@ export const Rocket: React.FC = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1 1"
-            height={vh}
+            height={vh - heightToRemove}
             className={styles.debug_path}
             preserveAspectRatio="none"
             ref={svgRef}
