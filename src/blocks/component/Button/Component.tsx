@@ -7,10 +7,32 @@ export interface ButtonProps {
   text: string
   color: string
   className?: string
+  onClick?: () => void
+  link?: string
 }
 
 export const ButtonBlock: React.FC<ButtonProps> = (props) => {
-  const { text, color, className } = props
+  const { text, color, className, onClick, link } = props
+
+  if (link) {
+    return (
+      <a
+        className={classNames(
+          body.base,
+          styles.button,
+          {
+            [styles.blue as string]: color === 'blue',
+            [styles.orange as string]: color === 'orange',
+          },
+          className,
+        )}
+        href={link}
+      >
+        {text}
+      </a>
+    )
+  }
+
   return (
     <button
       className={classNames(
@@ -22,6 +44,7 @@ export const ButtonBlock: React.FC<ButtonProps> = (props) => {
         },
         className,
       )}
+      onClick={onClick}
     >
       {text}
     </button>

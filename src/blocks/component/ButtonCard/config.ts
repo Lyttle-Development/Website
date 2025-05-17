@@ -62,6 +62,16 @@ export const ButtonCardConfig: Block = {
       },
     },
     {
+      name: 'buttonLink',
+      type: 'text',
+      localized: true,
+      required: false,
+      label: {
+        en: 'Button Link',
+        nl: 'Knop link',
+      },
+    },
+    {
       name: 'color',
       type: 'select',
       label: {

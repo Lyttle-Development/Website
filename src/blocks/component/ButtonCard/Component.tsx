@@ -9,11 +9,12 @@ export interface ButtonCardProps {
   title: string
   text: string
   buttonText: string
+  buttonLink: string
   color: string
 }
 
 export const ButtonCardBlock: React.FC<ButtonCardProps> = (props) => {
-  const { headingType, title, text, buttonText, color } = props
+  const { headingType, title, text, buttonText, buttonLink, color } = props
   return (
     <article className={styles.buttonCard}>
       {React.createElement(
@@ -34,6 +35,7 @@ export const ButtonCardBlock: React.FC<ButtonCardProps> = (props) => {
         })}
         text={buttonText}
         color={color}
+        link={buttonLink}
       />
     </article>
   )
