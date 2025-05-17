@@ -3,13 +3,9 @@ import classNames from 'classnames'
 import { poppins } from '@/styles/fonts'
 
 export const body = {
-  base: classNames(styles.font_size_base, styles.font_weight_normal, poppins.className),
+  base: classNames(styles.body_base, styles.font_weight_normal, poppins.className),
 }
 
 export const heading = {
-  base: classNames(styles.font_size_base, styles.font_weight_normal, poppins.className),
-}
-
-export const subheading = {
-  base: classNames(styles.font_size_base, styles.font_weight_normal, poppins.className),
+  base: classNames(styles.heading_base, styles.font_weight_normal, poppins.className),
 }
