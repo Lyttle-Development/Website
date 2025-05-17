@@ -22,3 +22,14 @@
 
   @error "Color key `#{$key}` not found in `$colors` map.";
 }
+
+@mixin fluid-type($min-font, $max-font, $min-w, $max-w) {
+  $slope: ($max-font - $min-font) / ($max-w - $min-w);
+  $intercept: $min-font - ($slope * $min-w);
+
+  font-size: clamp(
+    $min-font,
+    #{$intercept} + #{($slope * 100)}vw,
+    $max-font
+  );
+}

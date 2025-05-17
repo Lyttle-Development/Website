@@ -19,6 +19,7 @@ import type {
 } from '@/payload-types'
 import { BannerBlock } from '@/blocks/build-in/Banner/Component'
 import classNames from 'classnames'
+import { body } from '@/styles/typography'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -64,6 +65,7 @@ export default function RichText(props: Props) {
     <ConvertRichText
       converters={jsxConverters}
       className={classNames(
+        body.base,
         'payload-richtext',
         {
           container: enableGutter,
