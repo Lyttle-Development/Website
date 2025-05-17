@@ -1,16 +1,21 @@
 @use "~@/styles/variables.scss" as v;
+@use "~@/styles/utils.scss" as utils;
 
 .footer {
   padding-top: 15rem;
   width: 100vw;
+  position: relative;
+  overflow-x: clip;
 
   .content {
-    display: none;
+    @include utils.display-flex(row, 1rem);
     justify-content: space-between;
     align-items: center;
     margin-bottom: -18rem;
     flex-wrap: wrap;
     gap: 2rem;
+    padding-bottom: 2rem;
+    width: 100%;
 
     & {
       @media (min-width: v.$breakpoint-desktop) {
@@ -21,6 +26,11 @@
     > article {
       display: flex;
       flex-direction: column;
+      width: 100vw;
+
+      @media (min-width: v.$breakpoint-desktop) {
+        width: fit-content;
+      }
     }
 
     & {
@@ -34,7 +44,15 @@
     position: absolute;
     width: 100%;
     left: 0;
+    bottom: 0;
     z-index: -1;
-    overflow: hidden;
+    overflow: clip;
+    height: 35rem;
+
+    & {
+      @media (min-width: v.$breakpoint-desktop) {
+        height: 15rem;
+      }
+    }
   }
 }
