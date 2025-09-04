@@ -2,25 +2,20 @@ import type { CollectionSlug, PayloadRequest } from 'payload'
 import { getPayload } from 'payload'
 
 import { draftMode } from 'next/headers'
-import { redirect } from 'next/navigation'
+import { NextRequest, NextResponse } from 'next/server'
 
 import configPromise from '@payload-config'
 
 export async function GET(
-  req: {
-    cookies: {
-      get: (name: string) => {
-        value: string
-      }
-    }
-  } & Request,
+  request: NextRequest,
+  _context: { params: Promise<{}> },
 ): Promise<Response> {
   const payload = await getPayload({ config: configPromise })
 
-  const { searchParams } = new URL(req.url)
+  const { searchParams } = request.nextUrl
 
   const path = searchParams.get('path')
-  const collection = searchParams.get('collection') as CollectionSlug
+  const collection = searchParams.get('collection') as CollectionSlug | null
   const slug = searchParams.get('slug')
   const previewSecret = searchParams.get('previewSecret')
 
@@ -40,8 +35,9 @@ export async function GET(
 
   try {
     user = await payload.auth({
-      req: req as unknown as PayloadRequest,
-      headers: req.headers,
+      // Pass through the NextRequest to Payload as best-effort
+      req: request as unknown as PayloadRequest,
+      headers: request.headers,
     })
   } catch (error) {
     payload.logger.error({ err: error }, 'Error verifying token for live preview')
@@ -56,8 +52,8 @@ export async function GET(
   }
 
   // You can add additional checks here to see if the user is allowed to preview this page
-
   draft.enable()
 
-  redirect(path)
+  const redirectURL = new URL(path, request.url)
+  return NextResponse.redirect(redirectURL)
 }
