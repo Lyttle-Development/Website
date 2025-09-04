@@ -21,10 +21,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker Image
-        run: |
-          docker build \
-            --tag ghcr.io/lyttle-development/lyttledev-website:main \
-            .
+        run: docker build -t ghcr.io/lyttle-development/lyttledev-website:main .
 
       - name: Push Docker Image
         run: docker push ghcr.io/lyttle-development/lyttledev-website:main
