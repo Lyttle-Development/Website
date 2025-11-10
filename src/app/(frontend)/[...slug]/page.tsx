@@ -32,18 +32,22 @@ export async function generateStaticParams() {
       return doc.slug !== 'home'
     })
     .map(({ slug }) => {
-      return { slug }
+      // For a catch-all route ([...slug]) Next expects `params.slug` to be an array of path segments.
+      // Convert string slugs like "about/team" into ["about", "team"], and leave arrays as-is.
+      const slugArray = Array.isArray(slug)
+        ? slug
+        : typeof slug === 'string'
+          ? slug.split('/').filter(Boolean)
+          : [String(slug)]
+
+      return { slug: slugArray }
     })
 
   return params
 }
 
 const queryPageBySlug = cache(
-  async ({ slug, locale, draft }: {
-    slug: string;
-    locale?: string;
-    draft?: boolean
-  }) => {
+  async ({ slug, locale, draft }: { slug: string; locale?: string; draft?: boolean }) => {
     const payload = await getPayload({ config: configPromise })
 
     const result = await payload.find({
@@ -62,7 +66,7 @@ const queryPageBySlug = cache(
 
 type PageArgs = {
   params: Promise<{
-    slug?: string
+    slug?: string | string[]
   }>
 }
 
@@ -123,8 +127,25 @@ export default async function Page({ params: paramsPromise }: PageArgs) {
 
 export async function generateMetadata({ params: paramsPromise }: PageArgs): Promise<Metadata> {
   const { slug = 'home' } = await paramsPromise
+
+  // Normalize slug to an array of segments and handle locale detection the same way as the page renderer
+  const pathArray: string[] = Array.isArray(slug) ? slug : [slug]
+  const firstSegment = pathArray[0]
+
+  const locale =
+    SUPPORTED_LANGUAGES.map((l) => l.code).find((lang) => firstSegment === lang) ||
+    DEFAULT_LOCALE.code
+
+  let normalizedPathArray = pathArray
+  if (firstSegment === locale) {
+    normalizedPathArray = pathArray.slice(1)
+  }
+
+  const path = normalizedPathArray.length === 0 ? 'home' : normalizedPathArray.join('/')
+
   const page = await queryPageBySlug({
-    slug,
+    slug: path,
+    locale,
   })
 
   return generateMeta({ doc: page })
