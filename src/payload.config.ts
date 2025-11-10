@@ -82,7 +82,6 @@ export default buildConfig({
       ssl: {
         rejectUnauthorized: false,
       },
-      max: 2,
     },
   }),
   cors: [getServerSideURL()].filter(Boolean),
