@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as a parent image
-FROM node:22.19.0
+FROM node:24.11.1
 
 # Set the working directory in the container
 WORKDIR /app
@@ -17,5 +17,5 @@ EXPOSE 3000
 CMD ["npm", "start"]
 
 # Add a health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=1000s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10000s --retries=3 \
   CMD curl -f http://localhost:3000/api/health || exit 1
