@@ -89,8 +89,19 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   )
 }
 
+const _metadataBase = (() => {
+  const urlStr = getServerSideURL()
+  try {
+    return new URL(urlStr)
+  } catch (err) {
+    // If something unexpected slips through, fall back to localhost.
+    console.warn('Invalid metadataBase URL, falling back to http://localhost:3000', { urlStr, err })
+    return new URL('http://localhost:3000')
+  }
+})()
+
 export const metadata: Metadata = {
-  metadataBase: new URL(getServerSideURL()),
+  metadataBase: _metadataBase,
   openGraph: mergeOpenGraph(),
   twitter: {
     card: 'summary_large_image',

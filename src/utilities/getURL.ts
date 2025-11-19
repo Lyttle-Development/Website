@@ -1,17 +1,16 @@
 import canUseDOM from './canUseDOM'
 
 export const getServerSideURL = () => {
-  let url = process.env.NEXT_PUBLIC_SERVER_URL
+  // Treat empty or whitespace-only environment values as unset.
+  const envUrl = (process.env.NEXT_PUBLIC_SERVER_URL || '').trim()
 
-  if (!url && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  if (envUrl) return envUrl
+
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL && process.env.VERCEL_PROJECT_PRODUCTION_URL.trim()) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.trim()}`
   }
 
-  if (!url) {
-    url = 'http://localhost:3000'
-  }
-
-  return url
+  return 'http://localhost:3000'
 }
 
 export const getClientSideURL = () => {
@@ -23,11 +22,10 @@ export const getClientSideURL = () => {
     return `${protocol}//${domain}${port ? `:${port}` : ''}`
   }
 
-  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL && process.env.VERCEL_PROJECT_PRODUCTION_URL.trim()) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.trim()}`
   }
 
-  // Return a sensible default rather than an empty string so callers
-  // that construct URL objects don't receive '' and cause errors.
-  return process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
+  const envUrl = (process.env.NEXT_PUBLIC_SERVER_URL || '').trim()
+  return envUrl || 'http://localhost:3000'
 }

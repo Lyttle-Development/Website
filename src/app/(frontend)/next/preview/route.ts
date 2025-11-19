@@ -5,6 +5,7 @@ import { draftMode } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 
 import configPromise from '@payload-config'
+import { getServerSideURL } from '@/utilities/getURL'
 
 export async function GET(
   request: NextRequest,
@@ -54,6 +55,20 @@ export async function GET(
   // You can add additional checks here to see if the user is allowed to preview this page
   draft.enable()
 
-  const redirectURL = new URL(path, request.url)
+  // Ensure we have a usable base URL for the redirect. In some Next contexts
+  // request.url can be empty or undefined; fall back to the server-side URL.
+  const base = request.url || getServerSideURL()
+
+  let redirectURL
+  try {
+    redirectURL = new URL(path, base)
+  } catch (err) {
+    // Defensive fallback to avoid crashing the request handler.
+    // Log the problematic values for debugging and return a 500 response.
+    // Using console.error here keeps the handler simple and visible in dev logs.
+    console.error('Failed to create redirect URL from', { path, base, err })
+    return new Response('Invalid redirect URL', { status: 500 })
+  }
+
   return NextResponse.redirect(redirectURL)
 }
