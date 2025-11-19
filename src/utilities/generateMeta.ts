@@ -14,6 +14,8 @@ const getImageURL = (image?: Media | Config['db']['defaultIDType'] | null) => {
   if (image && typeof image === 'object' && 'url' in image) {
     const ogUrl = image.sizes?.og?.url
 
+    // url = ogUrl ? serverUrl + ogUrl : serverUrl + image.url
+
     url = ogUrl ? ogUrl : image.url || url
   }
 
@@ -35,10 +37,10 @@ export const generateMeta = async (args: {
       description: doc?.meta?.description || '',
       images: ogImage
         ? [
-          {
-            url: ogImage,
-          },
-        ]
+            {
+              url: ogImage,
+            },
+          ]
         : undefined,
       title,
       url: Array.isArray(doc?.slug) ? doc?.slug.join('/') : '/',

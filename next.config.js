@@ -11,7 +11,12 @@ const nextConfig = {
   images: {
     remotePatterns: [
       // Ensure we don't pass empty/invalid values into new URL()
-      ...["http://localhost", "http://localhost:3000", NEXT_PUBLIC_SERVER_URL /* 'https://example.com' */]
+      ...[
+        'http://localhost',
+        'http://localhost:3000',
+        'https://www.lyttledevelopment.com',
+        NEXT_PUBLIC_SERVER_URL /* 'https://example.com' */,
+      ]
         .filter(Boolean)
         .map((item) => {
           try {
