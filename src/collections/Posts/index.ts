@@ -229,7 +229,12 @@ export const Posts: CollectionConfig<'posts'> = {
   versions: {
     drafts: {
       autosave: {
-        interval: 100, // We set this interval for optimal live preview
+        // Original value was 100ms which can trigger many rapid saves while typing.
+        // With limited DB connections this causes overlapping writes and race conditions
+        // that can override user input. Make this configurable via env and default to 2000ms.
+        interval: process.env.PAYLOAD_AUTOSAVE_INTERVAL_MS
+          ? parseInt(process.env.PAYLOAD_AUTOSAVE_INTERVAL_MS, 10)
+          : 2000, // 2 seconds - reasonable debounce for autosave + live preview
       },
       schedulePublish: true,
     },
