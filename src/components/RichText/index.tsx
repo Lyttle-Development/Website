@@ -19,6 +19,7 @@ import type {
 } from '@/payload-types'
 import { BannerBlock } from '@/blocks/build-in/Banner/Component'
 import classNames from 'classnames'
+import { body } from '@/styles/typography'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -53,17 +54,26 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
 })
 
 type Props = {
-  data: DefaultTypedEditorState
+  // payload's generated types for rich text are looser than the library's
+  // DefaultTypedEditorState. Accept unknown (or any) here and cast when
+  // forwarding to the ConvertRichText component to satisfy TypeScript.
+  data: DefaultTypedEditorState | unknown
   enableGutter?: boolean
   enableProse?: boolean
 } & React.HTMLAttributes<HTMLDivElement>
 
 export default function RichText(props: Props) {
-  const { className, enableProse = true, enableGutter = true, ...rest } = props
+  const { className, enableProse = true, enableGutter = true, data, ...rest } = props
+
   return (
     <ConvertRichText
+      // The library expects DefaultTypedEditorState; cast the incoming
+      // payload-generated type to satisfy the typings. At runtime the
+      // structure is compatible.
+      data={data as DefaultTypedEditorState}
       converters={jsxConverters}
       className={classNames(
+        body.base,
         'payload-richtext',
         {
           container: enableGutter,

@@ -13,7 +13,7 @@ export const MODULE_ENABLED: ModuleEnabled = {
   forms: false,
   media: true,
   pages: true,
-  posts: false,
+  posts: true,
   redirects: false,
   search: false,
   users: true,

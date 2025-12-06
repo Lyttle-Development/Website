@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './Component.module.scss'
 import classNames from 'classnames'
 import { RandomStars } from '@/components/RandomStars'
+import { heading } from '@/styles/typography'
 
 export interface BannerTitleProps {
   title: string
@@ -20,7 +21,7 @@ export const BannerTitleBlock: React.FC<BannerTitleProps> = (props) => {
       {React.createElement(
         headingType || 'h1',
         {
-          className: classNames(styles.colorfulTitle),
+          className: classNames(heading.base),
         },
         <>{title}</>,
       )}

@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Component.module.scss'
 import classNames from 'classnames'
 import { colors } from '@/styles/variables'
+import { heading } from '@/styles/typography'
 
 export interface SpaceBackgroundProps {
   headingType: string // e.g., 'h1', 'h2', etc.
@@ -31,7 +32,7 @@ export const ColorfulTitleBlock: React.FC<SpaceBackgroundProps> = (props) => {
       {React.createElement(
         headingType || 'h1',
         {
-          className: classNames(styles.colorfulTitle, {
+          className: classNames(heading.base, styles.colorfulTitle, {
             [styles.reverseAlign as string]: reverseAlign,
             [styles.reverseColor as string]: reverseColor,
             [styles.colorPaddingLight as string]: colorPadding === 'light',

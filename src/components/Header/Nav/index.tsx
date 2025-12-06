@@ -5,7 +5,6 @@ import React from 'react'
 import type { Header as HeaderType } from '@/payload-types'
 
 import { CMSLink } from 'src/components/CMSLink'
-import Link from 'next/link'
 
 import styles from './styles.module.scss'
 import classNames from 'classnames'
@@ -18,9 +17,10 @@ export const HeaderNav: React.FC<{ data: HeaderType }> = ({ data }) => {
       {navItems.map(({ link }, i) => {
         return <CMSLink key={i} {...link} appearance="link" />
       })}
-      <Link href="/">
-        <span>Menu</span>
-      </Link>
+      {/* TODO: Add Menu */}
+      {/*<Link href="/">*/}
+      {/*  <span>Menu</span>*/}
+      {/*</Link>*/}
     </nav>
   )
 }

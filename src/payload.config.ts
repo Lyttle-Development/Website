@@ -17,6 +17,7 @@ import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
+import { resendAdapter } from '@payloadcms/email-resend'
 import * as constants from '../constants'
 import { defaultConfig } from '@payload-defaults'
 
@@ -86,6 +87,7 @@ export default buildConfig({
   cors: [getServerSideURL()].filter(Boolean),
   plugins: [...plugins],
   secret: process.env.PAYLOAD_SECRET,
+  serverURL: getServerSideURL(),
   sharp,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
@@ -106,23 +108,31 @@ export default buildConfig({
     tasks: [],
   },
   email:
-    process.env.EMAIL_ADDRESS &&
-    process.env.EMAIL_NAME &&
-    process.env.SMTP_HOST &&
-    process.env.SMTP_USER &&
-    process.env.SMTP_PASS
-      ? nodemailerAdapter({
-        defaultFromAddress: process.env.EMAIL_ADDRESS || '',
-        defaultFromName: process.env.EMAIL_NAME || '',
-        // Nodemailer transportOptions
-        transportOptions: {
-          host: process.env.SMTP_HOST,
-          port: 587,
-          auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
-          },
-        },
-      })
-      : undefined,
+    (process.env.EMAIL_ADDRESS &&
+      process.env.EMAIL_NAME &&
+      // Check if need to use nodemailer
+      (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS
+        ? nodemailerAdapter({
+            defaultFromAddress: process.env.EMAIL_ADDRESS || '',
+            defaultFromName: process.env.EMAIL_NAME || '',
+            // Nodemailer transportOptions
+            transportOptions: {
+              host: process.env.SMTP_HOST,
+              port: 587,
+              auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
+              },
+            },
+          })
+        : // Check if need to use Resend
+          process.env.RESEND_API_KEY
+          ? resendAdapter({
+              defaultFromAddress: process.env.EMAIL_ADDRESS || '',
+              defaultFromName: process.env.EMAIL_NAME || '',
+              apiKey: process.env.RESEND_API_KEY || '',
+            })
+          : // Default to no email adapter
+            undefined)) ||
+    undefined,
 })

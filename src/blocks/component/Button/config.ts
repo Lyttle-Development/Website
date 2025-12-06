@@ -38,5 +38,15 @@ export const ButtonConfig: Block = {
       ],
       defaultValue: 'blue',
     },
+    {
+      name: 'link',
+      type: 'text',
+      localized: true,
+      required: false,
+      label: {
+        en: 'Link',
+        nl: 'Link',
+      },
+    },
   ],
 }
